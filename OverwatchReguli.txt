@@ -358,7 +358,7 @@ premise ^
 }.
 
 R --> 40
-{hero ^ soldier76 :: fact_cert ^ 100
+{hero ^ soldier76 :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: low
@@ -369,7 +369,7 @@ premise ^
 }.
 
 R --> 41
-{hero ^ bastion :: fact_cert ^ 100
+{hero ^ bastion :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: low
@@ -380,7 +380,7 @@ premise ^
 }.
 
 R --> 42
-{hero ^ lucio :: fact_cert ^ 100
+{hero ^ lucio :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: low
@@ -391,7 +391,7 @@ premise ^
 }.
 
 R --> 43
-{hero ^ reinhardt :: fact_cert ^ 100
+{hero ^ reinhardt :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: low
@@ -401,7 +401,7 @@ premise ^
 	}
 }.
 R --> 44
-{hero ^ soldier76 :: fact_cert ^ 45 /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ soldier76 :: fact_cert ^ 77/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
 premise ^
 	{
 	 playerexperience :==: low
@@ -410,7 +410,7 @@ premise ^
 	}
 }.
 R --> 45
-{hero ^ bastion :: fact_cert ^ 45/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ bastion :: fact_cert ^ 77/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
 premise ^
 	{
 	 playerexperience :==: low
@@ -419,7 +419,7 @@ premise ^
 	}
 }.
 R --> 46
-{hero ^ reinhardt :: fact_cert ^ 45/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ reinhardt :: fact_cert ^ 77/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
 premise ^
 	{
 	 playerexperience :==: low
@@ -428,7 +428,7 @@ premise ^
 	}
 }.
 R --> 47
-{hero ^ junkrat :: fact_cert ^ 100
+{hero ^ junkrat :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -439,7 +439,7 @@ premise ^
 }.
 
 R --> 48
-{hero ^ widowmaker :: fact_cert ^ 100
+{hero ^ widowmaker :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -450,7 +450,7 @@ premise ^
 }.
 
 R --> 49
-{hero ^ tracer :: fact_cert ^ 100 /* atribut color diferit pentru acest erou */
+{hero ^ tracer :: fact_cert ^ 80 /* atribut color diferit pentru acest erou */
 premise ^
 	{
 	 playerexperience :==: medium
@@ -464,7 +464,7 @@ premise ^
 }.
 
 R --> 50
-{hero ^ tracer :: fact_cert ^ 100
+{hero ^ tracer :: fact_cert ^ 80
 premise ^
 	{
 	 playerexperience :==: medium
@@ -506,7 +506,7 @@ premise ^
 }.
 
 R --> 53
-{hero ^ winston :: fact_cert ^ 100
+{hero ^ winston :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -520,7 +520,7 @@ premise ^
 }.
 
 R --> 54
-{hero ^ torbjorn :: fact_cert ^ 100
+{hero ^ torbjorn :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -534,7 +534,7 @@ premise ^
 }.
 
 R --> 55
-{hero ^ winston :: fact_cert ^ 50 /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ winston :: fact_cert ^ 65 /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
 premise ^
 	{
 	 playerexperience :==: medium
@@ -544,7 +544,7 @@ premise ^
 }.
 
 R --> 56
-{hero ^ torbjorn :: fact_cert ^ 50
+{hero ^ torbjorn :: fact_cert ^ 65
 premise ^
 	{
 	 playerexperience :==: medium
@@ -568,7 +568,7 @@ premise ^
 }.
 
 R --> 58
-{hero ^ symmetra :: fact_cert ^ 100
+{hero ^ symmetra :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -666,7 +666,7 @@ premise ^
 }.
 
 R --> 65
-{hero ^ ana :: fact_cert ^ 100
+{hero ^ ana :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: high
@@ -680,7 +680,7 @@ premise ^
 }.
 
 R --> 66
-{hero ^ symmetra :: fact_cert ^ 50  /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ symmetra :: fact_cert ^ 60  /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
 premise ^
 	{
 	 waytoplay :==: backer
@@ -689,7 +689,7 @@ premise ^
 	}
 }.
 R --> 67
-{hero ^ ana :: fact_cert ^ 50
+{hero ^ ana :: fact_cert ^ 60
 premise ^
 	{
 	 waytoplay :==: backer
@@ -713,7 +713,7 @@ premise ^
 }.
 
 R --> 69
-{hero ^ mei :: fact_cert ^ 100/* atribut color diferit pentru acest erou */
+{hero ^ mei :: fact_cert ^ 90/* atribut color diferit pentru acest erou */
 premise ^
 	{
 	 playerexperience :==: medium
@@ -727,7 +727,7 @@ premise ^
 }.
 
 R --> 70
-{hero ^ mei :: fact_cert ^ 100
+{hero ^ mei :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -741,7 +741,7 @@ premise ^
 }.
 
 R --> 71
-{hero ^ hanzo :: fact_cert ^ 100  /* atribut color diferit pentru acest erou */
+{hero ^ hanzo :: fact_cert ^ 90  /* atribut color diferit pentru acest erou */
 premise ^
 	{
 	 playerexperience :==: high
@@ -755,7 +755,7 @@ premise ^
 }.
 
 R --> 72
-{hero ^ hanzo :: fact_cert ^ 100
+{hero ^ hanzo :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: high
@@ -767,6 +767,27 @@ premise ^
 	 &&color :==: white
 	}
 }.
+
+R --> 73
+{hero ^ tracer :: fact_cert ^ 60 //Drum separat
+premise ^
+	{
+	 color :==: orange
+	 &&costume :==: yellow
+	 &&hair :==: brown
+	}
+}.
+
+R --> 74
+{hero ^ tracer :: fact_cert ^ 65//Drum separat
+premise ^
+	{
+	 range :==: medium
+	 meta :==: yes
+	 personality_defect :==: emotional
+	}
+}.
+
 
 intrebare --> meta
 text ^ 'Este campionul in meta?'
@@ -845,7 +866,19 @@ blue | brown | red | white | green | orange | pink | black | purple
 }
 .
 
+intrebare --> hair
+text ^ 'Ce culoare de par vrei?'
+opt{
+blue | brown | red | white | green | orange | pink | black | purple | no_hair
+}
+.
 
+intrebare --> costume
+text ^ 'Care este culoarea costumului?'
+opt{
+blue | brown | red | white | green | orange | pink | black | purple  
+}
+.
 
 /*
 Exemplu de combinatii de atribute care nu dau solutii:
