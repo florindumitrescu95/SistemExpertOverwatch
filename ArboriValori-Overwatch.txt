@@ -16,7 +16,17 @@ Role:DPS,Protection,AssistingPlayers,AttractAtention
 Attribute:TankingDamage,EvadingDamage,HealingDamage,ProtectingOthers,GiveSupport
 Negative:impatient,ruthless,rude,unpredictable,harsh,naughty,gullible,sneaky,overcritical,cynical
 Personality-Defect:emotional,extremely-calculated
+Color:blue,yellow, brown, red, white, green, orange, pink, black, purple
 
+Atribute de la utilizator:
+PlayExperience,Range,Role,Meta,PlayMode,Personality,Attitude,Quality,Attribute,Negative,Color
+
+Atribute deduse:
+
+AlternateClass <- PlayMode
+WayToPlay <- TypeOfPlaying <- Personality,Attitude,Quality
+Class <- PlayMode,Attribute
+Personality-Defect <- Negative
 
 Hero:Soldier 76 <- PlayExperience:Low
                 <- Range:Medium
@@ -43,13 +53,15 @@ Hero:Tracer<- PlayExperience:Medium
 	       <- Class:Offensive<- PlayMode:Attacking
 	                         <- Attribute:EvadingDamage
 	       <- Personality-Defect:Emotional <- Negative:impatient
+		   <- Color:yellow
 	  
 Hero:Roadhog<- PlayExperience:Medium
             <- Range:Close
 	        <- WayToPlay:Attack <- TypeOfPlaying:DamageDealer <- Personality:active
 														      <- Attitude:intuitive
-														  <-Quality:anticipative
+														      <-Quality:anticipative
 	        <- Meta:Yes 
 	        <- Class:Tank<-PlayMode:Aggroing
 	                     <-Attribute:TankingDamage
 			<- Personality-Defect:Emotional <- Negative:Rude
+			<- Color:pink

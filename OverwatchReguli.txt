@@ -1,431 +1,862 @@
-scopul este hero
-
-regula 1
-daca playmode is putting_traps
-atunci alternateclass este trapper
-
-regula 2
-daca playmode is assassinating
-atunci alternateclass este sniper
-
-regula 3
-daca personality is adventurous si
-	 attitude is intuitive si
-	 quality is energetic
-atunci typeofplaying este damagedealer
-
-regula 4
-daca personality is independent si
-	 attitude is stoic si
-	 quality is prudent
-atunci typeofplaying este damagedealer
-
-regula 5
-daca personality is active si
-	 attitude is intuitive si
-	 quality is anticipative
-atunci typeofplaying este damageabsorber
-
-regula 6
-daca personality is calm si
-	 attitude is logical si
-	 quality is organized
-atunci typeofplaying este damageabsorber
-
-regula 7
-daca personality is independent si
-	 attitude is stoic si
-	 quality is protective
-atunci typeofplaying este protector
-
-regula 8
-daca personality is caring si
-	 attitude is selfless si
-	 quality is helpful
-atunci typeofplaying este team_helper
-
-regula 9
-daca personality is adaptable si
-	 attitude is logical si
-	 quality is organized
-atunci typeofplaying este team_helper
-
-regula 10
-daca personality is adventurous si
-	 attitude is precise si
-	 quality is reflective
-atunci typeofplaying este damagedealer
-
-regula 11
-daca personality is adaptable si
-	 attitude is selfless si
-	 quality is rational
-atunci typeofplaying este team_helper
-
-regula 12
-daca personality is calculating si
-	 attitude is crafty si
-	 quality is anticipative
-atunci typeofplaying este damagedealer
-
-regula 13
-daca personality is spontaneous si
-	 attitude is intuitive si
-	 quality is energetic
-atunci typeofplaying este damageabsorber
-
-regula 14
-daca personality is independent si
-	 attitude is precise si
-	 quality is aggressive
-atunci typeofplaying este damagedealer
-
-regula 14
-daca personality is calm si
-	 attitude is stoic si
-	 quality is protective
-atunci typeofplaying este damageabsorber
-
-regula 15
-daca personality is caring si
-	 attitude is precise si
-	 quality is prudent
-atunci typeofplaying este team_helper
-
-regula 16
-daca personality is calm si
-	 attitude is stoic si
-	 quality is reflective
-atunci typeofplaying este damagedealer
-
-regula 17
-daca personality is active si
-	 attitude is observant si
-	 quality is energetic
-atunci typeofplaying este protector
-
-regula 18
-daca personality is calm si
-	 attitude is precise si
-	 quality is logical
-atunci typeofplaying este damagedealer
-
-regula 19
-daca typeofplaying is damagedealer
-atunci waytoplay este attack
-
-regula 20
-daca typeofplaying is protector
-atunci waytoplay este defense
-
-regula 21
-daca typeofplaying is team_helper
-atunci waytoplay este backer
-
-regula 22
-daca typeofplaying is damageabsorber
-atunci waytoplay este human_shield
-
-regula 23
-daca playmode is attacking si
-	attribute is evading_damage
-atunci class este offensive
-
-regula 24
-daca playmode is protecting si
-	attribute is protecting_others
-atunci class este defensive
-
-regula 25
-daca playmode is aggroing si
-	attribute is tanking_damage
-atunci class este tank
-
-regula 26
-daca playmode is healing si 
-     attribute is healing_damage
-atunci class este support
-
-regula 27
-daca playmode is assisting si 
-     attribute is giving_support
-atunci class este support 
-
-regula 28
-daca negative is impatient
-atunci personality_defect este emotional
-
-regula 29
-daca negative is ruthless
-atunci personality_defect este emotional
-
-regula 30
-daca negative is rude
-atunci personality_defect este emotional
-
-regula 31
-daca negative is unpredictable
-atunci personality_defect este emotional
-
-regula 32
-daca negative is harsh
-atunci personality_defect este emotional
-
-regula 33
-daca negative is naughty
-atunci personality_defect este emotional
-
-regula 34
-daca negative is gullible
-atunci personality_defect este emotional
-
-regula 35
-daca negative is sneaky
-atunci personality_defect este extremely-calculated
-
-regula 36
-daca negative is overcritical
-atunci personality_defect este extremely-calculated
-
-regula 37
-daca negative is cynical
-atunci personality_defect este extremely-calculated
-
-regula 38
-daca negative is quick-tempered
-atunci personality_defect este emotional
-
-regula 39
-daca playerexperience is low si
-	 range is medium si
-	 role is dps si
-	 meta is yes
-atunci hero este soldier76
-
-regula 40
-daca playerexperience is low si
-	 range is medium si
-	 role is protection si
-	 meta is yes
-atunci hero este bastion
-
-regula 41
-daca playerexperience is low si
-	 range is close si
-	 role is assisting_teammates si
-	 meta is yes
-atunci hero este lucio
-
-regula 42
-daca playerexperience is low si
-	 range is medium si
-	 role is attract_atention si
-	 meta is yes
-atunci hero este reinhardt
-
-regula 43
-daca playerexperience is medium si
-	 range is close si
-	 alternateclass is trapper si 
-	 meta is yes
-atunci hero is junkrat
-
-regula 44
-daca playerexperience is medium si
-	 range is close si
-	 alternateclass is sniper si 
-	 meta is no
-atunci hero is widowmaker
-
-regula 45
-daca playerexperience is medium si
-	 range is medium si
-	 waytoplay is attack si
-	 meta is yes si
-	 class is offensive si
-	 personality_defect is emotional
-atunci hero is tracer
-
-regula 46
-daca playerexperience is low si
-	 range is close si
-	 waytoplay is attack si
-	 meta is yes si
-	 class is offensive si
-	 personality_defect is emotional
-atunci hero is reaper
-
-regula 47
-daca playerexperience is medium si
-	 range is medium si
-	 waytoplay is human_shield si
-	 meta is yes si
-	 class is tank si
-	 personality_defect is emotional
-atunci hero is roadhog
-
-regula 48
-daca playerexperience is medium si
-	 range is close si
-	 waytoplay is human_shield si
-	 meta is no si
-	 class is tank si
-	 personality_defect is emotional
-atunci hero is winston
-
-regula 49
-daca playerexperience is medium si
-	 range is close si
-	 waytoplay is defense si
-	 meta is no si
-	 class is defensive si
-	 personality_defect is extremely-calculated
-atunci hero is torbjorn
-
-regula 50
-daca playerexperience is low si
-	 range is high si
-	 waytoplay is backer si
-	 meta is yes si
-	 class is support si
-	 personality_defect is emotional
-atunci hero is mercy
-
-regula 51
-daca playerexperience is medium si
-	 range is close si
-	 waytoplay is backer si
-	 meta is no si
-	 class is support si
-	 personality_defect is extremely-calculated
-atunci hero is symmetra
-
-regula 52
-daca playerexperience is medium si
-	 range is high si
-	 waytoplay is attack si
-	 meta is yes si
-	 class is offensive si
-	 personality_defect is emotional
-atunci hero is pharah
-
-regula 53
-daca playerexperience is high si
-	 range is medium si
-	 waytoplay is backer si
-	 meta is yes si
-	 class is support si
-	 personality_defect is extremely-calculated
-atunci hero is zenyatta
-
-regula 54
-daca playerexperience is high si
-	 range is medium si
-	 waytoplay is attack si
-	 meta is no si
-	 class is offensive si
-	 personality_defect is extremely-calculated
-atunci hero is sombra
-
-regula 55
-daca playerexperience is medium si
-	 range is high si
-	 waytoplay is human_shield si
-	 meta is yes si
-	 class is tank si
-	 personality_defect is emotional
-atunci hero is d.va
-
-regula 56
-daca playerexperience is medium si
-	 range is close si
-	 waytoplay is attack si
-	 meta is yes si
-	 class is offensive si
-	 personality_defect is emotional
-atunci hero is mccree
-
-regula 57
-daca playerexperience is high si
-	 range is close si
-	 waytoplay is human_shield si
-	 meta is yes si
-	 class is tank si
-	 personality_defect is emotional
-atunci hero is zarya
-
-regula 58
-daca playerexperience is high si
-	 range is high si
-	 waytoplay is backer si
-	 meta is yes si
-	 class is support si
-	 personality_defect is extremely-calculated
-atunci hero is ana
-
-regula 59
-daca playerexperience is medium si
-	 range is close si
-	 waytoplay is attack si
-	 meta is yes si
-	 class is offensive si
-	 personality_defect is extremely-calculated
-atunci hero is genji
-
-regula 60
-daca playerexperience is medium si
-	 range is high si
-	 waytoplay is defense si
-	 meta is yes si
-	 class is defensive si
-	 personality_defect is emotional
-atunci hero is mei
-
-regula 61
-daca playerexperience is high si
-	 range is high si
-	 waytoplay is defense si
-	 meta is yes si
-	 class is defensive si
-	 personality_defect is emotional
-atunci hero is hanzo
-
-intreaba meta
-optiuni(da nu)
-afiseaza 'Este campionul in meta?'
-
-intreaba range
-optiuni(close medium long)
-afiseaza 'Care este distanta la care eroul sa poata sa traga cu acuratete?'
-
-intreaba playexperience
-optiuni(low medium high)
-afiseaza 'Cata experienta ai cu acest joc?'
-
-intreaba role
-optiuni(dps protector assisting_players attract_atention)
-afiseaza "Ce rol vrei sa ai?"
-
-intreaba playmode
-optiuni(attacking aggroing healing protecting giving_support putting_traps assassinating)
-afiseaza "Care e modul tau de a juca?"
-
-intreaba personality
-optiuni(aggresive passive)
-afiseaza "Ce personalitate ai?"
-
-intreaba attitude
-optiuni(perseverent attentive)
-afiseaza "Ce fel de atitudine ai?"
-
-intreaba quality
-optiuni(patient dynamic)
-afiseaza "Ce calitate ai?"
-
-intreaba attribute
-optiuni(tanking_damage evading_damage healing_damage protecting_others assisting_teammates)
-afiseaza "Care dintre atribute le ai?"
-
-intreaba negative
-optiuni(impatient,ruthless,rude,unpredictable,harsh,naughty,gullible,sneaky,overcritical,cynical,emotional,extremely-calculated)
-afiseaza "Care este un atribut negativ de al tau?"
+scop ^ hero.
+
+R --> 1
+{alternateclass ^ trapper :: fact_cert ^ 100
+premise ^
+	{
+	 playmode :==: putting_traps
+	}
+}.
+
+
+R --> 2
+{alternateclass ^ sniper :: fact_cert ^ 100
+premise ^
+	{
+	 playmode :==: assassinating
+	}
+}.
+
+
+R --> 3
+{typeofplaying ^ damagedealer :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: adventurous
+	 &&attitude :==: intuitive
+	 &&quality :==: energetic
+    }
+}.	
+
+R --> 4
+{typeofplaying ^ damagedealer :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: independent
+	 &&attitude :==: stoic
+	 &&quality :==: prudent
+    }
+}.
+
+R --> 5
+{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: active
+	 &&attitude :==: intuitive
+	 &&quality :==: anticipative
+    }
+}.
+
+R --> 6
+{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: calm
+	 &&attitude :==: logical
+	 &&quality :==: organized
+    }
+}.
+
+R --> 7
+{typeofplaying ^ protector :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: independent
+	 &&attitude :==: stoic
+	 &&quality :==: protective
+    }
+}.
+
+R --> 8
+{typeofplaying ^ team_helper :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: caring
+	 &&attitude :==: selfless
+	 &&quality :==: helpful
+    }
+}.
+
+R --> 9
+{typeofplaying ^ team_helper :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: adaptable
+	 &&attitude :==: logical
+	 &&quality :==: organized
+    }
+}.
+
+R --> 10
+{typeofplaying ^ damagedealer :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: adventurous
+	 &&attitude :==: precise
+	 &&quality :==: reflective
+    }
+}.
+
+R --> 11
+{typeofplaying ^ team_helper :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: adaptable
+	 &&attitude :==: selfless
+	 &&quality :==: rational
+    }
+}.
+
+R --> 12
+{typeofplaying ^ damagedealer :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: calculating
+	 &&attitude :==: crafty
+	 &&quality :==: anticipative
+    }
+}.
+
+R --> 13
+{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: spontaneous
+	 &&attitude :==: intuitive
+	 &&quality :==: energetic
+    }
+}.
+
+R --> 14
+{typeofplaying ^ damagedealer :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: independent
+	 &&attitude :==: precise
+	 &&quality :==: aggressive
+    }
+}.
+
+R --> 15
+{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: calm
+	 &&attitude :==: stoic
+	 &&quality :==: protective
+    }
+}.
+
+R --> 16
+{typeofplaying ^ team_helper :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: caring
+	 &&attitude :==: precise
+	 &&quality :==: prudent
+    }
+}.
+
+R --> 17
+{typeofplaying ^ damagedealer :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: calm
+	 &&attitude :==: stoic
+	 &&quality :==: reflective
+    }
+}.
+
+R --> 18
+{typeofplaying ^ protector :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: active
+	 &&attitude :==: observant
+	 &&quality :==: energetic
+    }
+}.
+
+R --> 19
+{typeofplaying ^ damagedealer :: fact_cert ^ 100
+premise ^
+	{
+	 personality :==: calm
+	 &&attitude :==: precise
+	 &&quality :==: logical
+    }
+}.
+
+
+R --> 20
+{waytoplay ^ attack :: fact_cert ^ 100
+premise ^
+	{
+	 waytoplay :==: damagedealer
+	}
+}.
+
+R --> 21
+{waytoplay ^ defense :: fact_cert ^ 100
+premise ^
+	{
+	 typeofplaying :==: protector
+	}
+}.
+
+R --> 22
+{waytoplay ^ backer :: fact_cert ^ 100
+premise ^
+	{
+	 typeofplaying :==: team_helper
+	}
+}.
+
+R --> 23
+{waytoplay ^ human_shield :: fact_cert ^ 100
+premise ^
+	{
+	 typeofplaying :==: damageabsorber
+	}
+}.
+
+
+R --> 24
+{class ^ offensive :: fact_cert ^ 100
+premise ^
+	{
+	 playmode :==: attacking
+	 &&attribute :==: evading_damage
+	}
+}.
+
+
+R --> 25
+{class ^ defensive :: fact_cert ^ 100
+premise ^
+	{
+	 playmode :==: protecting
+	 &&attribute :==: protecting_others
+	}
+}.
+
+R --> 26
+{class ^ tank :: fact_cert ^ 100
+premise ^
+	{
+	 playmode :==: aggroing
+	 &&attribute :==: tanking_damage
+	}
+}.
+
+R --> 27
+{class ^ support :: fact_cert ^ 100
+premise ^
+	{
+	 playmode :==: healing
+	 &&attribute :==: healing_damage
+	}
+}.
+
+R --> 28
+{class ^ support :: fact_cert ^ 100
+premise ^
+	{
+	 playmode :==: assisting
+	 &&attribute :==: giving_support
+	}
+}.
+
+R --> 29
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: impatient
+	}
+}.
+
+
+R --> 30
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: ruthless
+	}
+}.
+
+R --> 31
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: rude
+	}
+}.
+
+R --> 32
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: unpredictable
+	}
+}.
+
+R --> 33
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: harsh
+	}
+}.
+
+R --> 34
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: naughty
+	}
+}.
+
+R --> 35
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: gullible
+	}
+}.
+
+R --> 36
+{personality_defect ^ extremely-calculated :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: sneaky
+	}
+}.
+
+R --> 37
+{personality_defect ^ extremely-calculated :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: overcritical
+	}
+}.
+
+R --> 38
+{personality_defect ^ extremely-calculated :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: cynical
+	}
+}.
+
+R --> 39
+{personality_defect ^ emotional :: fact_cert ^ 100
+premise ^
+	{
+	 negative :==: quick-tempered
+	}
+}.
+
+R --> 40
+{hero ^ soldier76 :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: medium
+	 &&role:==: dps
+	 &&meta
+	}
+}.
+
+R --> 41
+{hero ^ bastion :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: medium
+	 &&role :==: protection
+	 &&meta
+	}
+}.
+
+R --> 42
+{hero ^ lucio :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: close
+	 &&role :==: assisting_teammates
+	 &&meta
+	}
+}.
+
+R --> 43
+{hero ^ reinhardt :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: medium
+	 &&role :==: attract_atention
+	 &&meta
+	}
+}.
+R --> 44
+{hero ^ soldier76 :: fact_cert ^ 45 /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: medium
+	 &&meta
+	}
+}.
+R --> 45
+{hero ^ bastion :: fact_cert ^ 45/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: medium
+	 &&meta
+	}
+}.
+R --> 46
+{hero ^ reinhardt :: fact_cert ^ 45/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: medium
+	 &&meta
+	}
+}.
+R --> 47
+{hero ^ junkrat :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&alternateclass :==: trapper
+	 &&meta
+	}
+}.
+
+R --> 48
+{hero ^ widowmaker :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: long
+	 &&alternateclass :==: sniper
+	 && //meta
+	}
+}.
+
+R --> 49
+{hero ^ tracer :: fact_cert ^ 100 /* atribut color diferit pentru acest erou */
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: medium
+	 &&waytoplay :==: attack
+	 &&class :==: offensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: yellow
+	}
+}.
+
+R --> 50
+{hero ^ tracer :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: medium
+	 &&waytoplay :==: attack
+	 &&class :==: offensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: blue
+	}
+}.
+
+R --> 51
+{hero ^ reaper :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: close
+	 &&waytoplay :==: attack
+	 &&class :==: offensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: black
+	}
+}.
+
+R --> 52
+{hero ^ roadhog :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: medium
+	 &&waytoplay :==: human_shield
+	 &&class :==: tank
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: pink
+	}
+}.
+
+R --> 53
+{hero ^ winston :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&waytoplay :==: human_shield
+	 &&class :==: tank
+	 &&//meta
+	 &&personality_defect :==: emotional
+	 &&color :==: blue
+	}
+}.
+
+R --> 54
+{hero ^ torbjorn :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&waytoplay :==: defense
+	 &&class :==: defensive
+	 &&//meta
+	 &&personality_defect :==: extremely-calculated
+	 &&color :==: red
+	}
+}.
+
+R --> 55
+{hero ^ winston :: fact_cert ^ 50 /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&//meta
+	}
+}.
+
+R --> 56
+{hero ^ torbjorn :: fact_cert ^ 50
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&//meta
+	}
+}.
+
+R --> 57
+{hero ^ mercy :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: low
+	 &&range :==: long
+	 &&waytoplay :==: backer
+	 &&class :==: support
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: white
+	}
+}.
+
+R --> 58
+{hero ^ symmetra :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&waytoplay :==: backer
+	 &&class :==: support
+	 &&//meta
+	 &&personality_defect :==: extremely-calculated
+	 &&color :==: blue
+	}
+}.
+
+R --> 59
+{hero ^ pharah :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: long
+	 &&waytoplay :==: attack
+	 &&class :==: offensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: blue
+	}
+}.
+
+R --> 60
+{hero ^ zenyatta :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: high
+	 &&range :==: medium
+	 &&waytoplay :==: backer
+	 &&class :==: support
+	 &&meta
+	 &&personality_defect :==: extremely-calculated
+	 &&color :==: yellow
+	}
+}.
+
+R --> 61
+{hero ^ sombra :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: high
+	 &&range :==: medium
+	 &&waytoplay :==: attack
+	 &&class :==: offensive
+	 &&//meta
+	 &&personality_defect :==: extremely-calculated
+	 &&color :==: purple
+	}
+}.
+
+R --> 62
+{hero ^ "d.va" :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: long
+	 &&waytoplay :==: human_shield
+	 &&class :==: tank
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: pink
+	}
+}.
+
+R --> 63
+{hero ^ mccree :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&waytoplay :==: attack
+	 &&class :==: offensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: brown
+	}
+}.
+
+R --> 64
+{hero ^ zarya :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: high
+	 &&range :==: close
+	 &&waytoplay :==: human_shield
+	 &&class :==: tank
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: pink
+	}
+}.
+
+R --> 65
+{hero ^ ana :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: high
+	 &&range :==: long
+	 &&waytoplay :==: backer
+	 &&class :==: support
+	 &&meta
+	 &&personality_defect :==: extremely-calculated
+	 &&color :==: blue
+	}
+}.
+
+R --> 66
+{hero ^ symmetra :: fact_cert ^ 50  /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+premise ^
+	{
+	 waytoplay :==: backer
+	 &&class :==: support
+	 &&personality_defect :==: extremely-calculated
+	}
+}.
+R --> 67
+{hero ^ ana :: fact_cert ^ 50
+premise ^
+	{
+	 waytoplay :==: backer
+	 &&class :==: support
+	 &&personality_defect :==: extremely-calculated
+	}
+}.
+
+R --> 68
+{hero ^ genji :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: close
+	 &&waytoplay :==: attack
+	 &&class :==: offensive
+	 &&meta
+	 &&personality_defect :==: extremely-calculated
+	 &&color :==: white
+	}
+}.
+
+R --> 69
+{hero ^ mei :: fact_cert ^ 100/* atribut color diferit pentru acest erou */
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: long
+	 &&waytoplay :==: defense
+	 &&class :==: defensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: white
+	}
+}.
+
+R --> 70
+{hero ^ mei :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: medium
+	 &&range :==: long
+	 &&waytoplay :==: defense
+	 &&class :==: defensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: blue
+	}
+}.
+
+R --> 71
+{hero ^ hanzo :: fact_cert ^ 100  /* atribut color diferit pentru acest erou */
+premise ^
+	{
+	 playerexperience :==: high
+	 &&range :==: long
+	 &&waytoplay :==: defense
+	 &&class :==: defensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: brown
+	}
+}.
+
+R --> 72
+{hero ^ hanzo :: fact_cert ^ 100
+premise ^
+	{
+	 playerexperience :==: high
+	 &&range :==: long
+	 &&waytoplay :==: defense
+	 &&class :==: defensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: white
+	}
+}.
+
+intrebare --> meta
+text ^ 'Este campionul in meta?'
+opt{
+da | nu
+}
+.
+
+intrebare --> range
+text ^ 'Care este distanta la care eroul sa poata sa traga cu acuratete?'
+opt{
+close | medium | long
+}
+.
+
+intrebare --> playexperience
+text ^ 'Cata experienta ai cu acest joc?'
+opt{
+low | medium | high
+}
+.
+
+intrebare --> role
+text ^ 'Ce rol vrei sa ai?'
+opt{
+dps | protector | assisting_players | attract_atention
+}
+.
+
+intrebare --> playmode
+text ^ 'Care e modul tau de a juca?'
+opt{
+attacking | protecting | healing | aggroing | giving_support | putting_traps | assassinating
+}
+.
+
+intrebare --> personality
+text ^ 'Ce personalitate ai?'
+opt{
+Adventurous | Independent | Active | Calm | Caring | Adaptable | Calculating | Spontaneous
+}
+.
+
+intrebare --> attitude
+text ^ 'Ce fel de atitudine ai?'
+opt{
+Intuitive | Stoic | Logical | Selfless | Precise | Crafty | Observant
+}
+.
+
+intrebare --> quality
+text ^ 'Ce calitate ai?'
+opt{
+energetic | prudent | anticipative | organized | protective | helpful | reflective | rational 
+}
+.
+
+intrebare --> attribute
+text ^ 'Care dintre atribute le ai?'
+opt{
+tanking_damage | evading_damage | healing_damage | protecting_others | assisting_teammates 
+}
+.
+
+intrebare --> negative
+text ^ 'Care este un atribut negativ de al tau?'
+opt{
+impatient | ruthless | rude | unpredictable | harsh | naughty | gullible | sneaky | overcritical | cynical | emotional | extremely-calculated
+}
+.
+
+intrebare --> color
+text ^ 'Care este culoarea ta preferata?'
+opt{
+blue | brown | red | white | green | orange | pink | black | purple  
+}
+.
+
+
+
+/*
+Exemplu de combinatii de atribute care nu dau solutii:
+
+
+	 playerexperience :==: low
+	 &&range :==: close
+	 &&waytoplay :==: defense
+	 &&class :==: defensive
+	 &&meta
+	 &&personality_defect :==: emotional
+	 &&color :==: purple
+	 
+	 */
