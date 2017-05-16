@@ -1,0 +1,55 @@
+
+Range:Close,Medium,Long
+Class:Offensive,Defensive,Tank,Support
+TypeOfPlaying:DamageDealer,Protector,Team_Helper,DamageAbsorber
+Personality:Adventurous,Independent,Active,Calm,Caring,Adaptable,Calculating,Spontaneous
+Attitude:Intuitive,Stoic,Logical,Selfless,Precise,Crafty,Observant
+Quality:energetic,prudent,anticipative,organized,protective,helpful,reflective,rational,anticipative,prudent,logical
+Meta:Yes,No
+AlternateClass:Sniper,Trapper,
+PlayMode:Attacking,Aggroing,Healing,Protecting,Assisting,PuttingTraps,Assassinating,		
+Quality:Patient,Dynamic,
+Role:DPS,Protection
+PlayExperience:Low,Medium,Hard
+WayToPlay:Attack,Defense,Backer,Human_Shield
+Role:DPS,Protection,AssistingPlayers,AttractAtention
+Attribute:TankingDamage,EvadingDamage,HealingDamage,ProtectingOthers,GiveSupport
+Negative:impatient,ruthless,rude,unpredictable,harsh,naughty,gullible,sneaky,overcritical,cynical
+Personality-Defect:emotional,extremely-calculated
+
+
+Hero:Soldier 76 <- PlayExperience:Low
+                <- Range:Medium
+                <- Role:DPS
+				<- Meta:Yes
+Hero:Bastion<- PlayExperience:Low
+            <- Range:Medium
+            <- Role:Protection
+			<- Meta:Yes
+Hero:Junkrat <- PlayExperience:Medium
+             <- Range:Close
+             <- AlternateClass:Trapper <-PlayMode:PuttingTraps
+			 <- Meta:Yes
+Hero:WidowMaker <- PlayExperience:Medium
+                <- Range:Long
+                <- AlternateClass:Sniper <-PlayMode:Assassinating
+			    <- Meta:Yes
+Hero:Tracer<- PlayExperience:Medium
+           <- Range:Medium
+	       <- WayToPlay:Attack <- TypeOfPlaying:DamageDealer <- Personality: adventurous
+														     <- Attitude:intuitive
+														     <- Quality:energetic
+	       <- Meta:Yes 
+	       <- Class:Offensive<- PlayMode:Attacking
+	                         <- Attribute:EvadingDamage
+	       <- Personality-Defect:Emotional <- Negative:impatient
+	  
+Hero:Roadhog<- PlayExperience:Medium
+            <- Range:Close
+	        <- WayToPlay:Attack <- TypeOfPlaying:DamageDealer <- Personality:active
+														      <- Attitude:intuitive
+														  <-Quality:anticipative
+	        <- Meta:Yes 
+	        <- Class:Tank<-PlayMode:Aggroing
+	                     <-Attribute:TankingDamage
+			<- Personality-Defect:Emotional <- Negative:Rude

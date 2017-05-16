@@ -1,0 +1,431 @@
+scopul este hero
+
+regula 1
+daca playmode is putting_traps
+atunci alternateclass este trapper
+
+regula 2
+daca playmode is assassinating
+atunci alternateclass este sniper
+
+regula 3
+daca personality is adventurous si
+	 attitude is intuitive si
+	 quality is energetic
+atunci typeofplaying este damagedealer
+
+regula 4
+daca personality is independent si
+	 attitude is stoic si
+	 quality is prudent
+atunci typeofplaying este damagedealer
+
+regula 5
+daca personality is active si
+	 attitude is intuitive si
+	 quality is anticipative
+atunci typeofplaying este damageabsorber
+
+regula 6
+daca personality is calm si
+	 attitude is logical si
+	 quality is organized
+atunci typeofplaying este damageabsorber
+
+regula 7
+daca personality is independent si
+	 attitude is stoic si
+	 quality is protective
+atunci typeofplaying este protector
+
+regula 8
+daca personality is caring si
+	 attitude is selfless si
+	 quality is helpful
+atunci typeofplaying este team_helper
+
+regula 9
+daca personality is adaptable si
+	 attitude is logical si
+	 quality is organized
+atunci typeofplaying este team_helper
+
+regula 10
+daca personality is adventurous si
+	 attitude is precise si
+	 quality is reflective
+atunci typeofplaying este damagedealer
+
+regula 11
+daca personality is adaptable si
+	 attitude is selfless si
+	 quality is rational
+atunci typeofplaying este team_helper
+
+regula 12
+daca personality is calculating si
+	 attitude is crafty si
+	 quality is anticipative
+atunci typeofplaying este damagedealer
+
+regula 13
+daca personality is spontaneous si
+	 attitude is intuitive si
+	 quality is energetic
+atunci typeofplaying este damageabsorber
+
+regula 14
+daca personality is independent si
+	 attitude is precise si
+	 quality is aggressive
+atunci typeofplaying este damagedealer
+
+regula 14
+daca personality is calm si
+	 attitude is stoic si
+	 quality is protective
+atunci typeofplaying este damageabsorber
+
+regula 15
+daca personality is caring si
+	 attitude is precise si
+	 quality is prudent
+atunci typeofplaying este team_helper
+
+regula 16
+daca personality is calm si
+	 attitude is stoic si
+	 quality is reflective
+atunci typeofplaying este damagedealer
+
+regula 17
+daca personality is active si
+	 attitude is observant si
+	 quality is energetic
+atunci typeofplaying este protector
+
+regula 18
+daca personality is calm si
+	 attitude is precise si
+	 quality is logical
+atunci typeofplaying este damagedealer
+
+regula 19
+daca typeofplaying is damagedealer
+atunci waytoplay este attack
+
+regula 20
+daca typeofplaying is protector
+atunci waytoplay este defense
+
+regula 21
+daca typeofplaying is team_helper
+atunci waytoplay este backer
+
+regula 22
+daca typeofplaying is damageabsorber
+atunci waytoplay este human_shield
+
+regula 23
+daca playmode is attacking si
+	attribute is evading_damage
+atunci class este offensive
+
+regula 24
+daca playmode is protecting si
+	attribute is protecting_others
+atunci class este defensive
+
+regula 25
+daca playmode is aggroing si
+	attribute is tanking_damage
+atunci class este tank
+
+regula 26
+daca playmode is healing si 
+     attribute is healing_damage
+atunci class este support
+
+regula 27
+daca playmode is assisting si 
+     attribute is giving_support
+atunci class este support 
+
+regula 28
+daca negative is impatient
+atunci personality_defect este emotional
+
+regula 29
+daca negative is ruthless
+atunci personality_defect este emotional
+
+regula 30
+daca negative is rude
+atunci personality_defect este emotional
+
+regula 31
+daca negative is unpredictable
+atunci personality_defect este emotional
+
+regula 32
+daca negative is harsh
+atunci personality_defect este emotional
+
+regula 33
+daca negative is naughty
+atunci personality_defect este emotional
+
+regula 34
+daca negative is gullible
+atunci personality_defect este emotional
+
+regula 35
+daca negative is sneaky
+atunci personality_defect este extremely-calculated
+
+regula 36
+daca negative is overcritical
+atunci personality_defect este extremely-calculated
+
+regula 37
+daca negative is cynical
+atunci personality_defect este extremely-calculated
+
+regula 38
+daca negative is quick-tempered
+atunci personality_defect este emotional
+
+regula 39
+daca playerexperience is low si
+	 range is medium si
+	 role is dps si
+	 meta is yes
+atunci hero este soldier76
+
+regula 40
+daca playerexperience is low si
+	 range is medium si
+	 role is protection si
+	 meta is yes
+atunci hero este bastion
+
+regula 41
+daca playerexperience is low si
+	 range is close si
+	 role is assisting_teammates si
+	 meta is yes
+atunci hero este lucio
+
+regula 42
+daca playerexperience is low si
+	 range is medium si
+	 role is attract_atention si
+	 meta is yes
+atunci hero este reinhardt
+
+regula 43
+daca playerexperience is medium si
+	 range is close si
+	 alternateclass is trapper si 
+	 meta is yes
+atunci hero is junkrat
+
+regula 44
+daca playerexperience is medium si
+	 range is close si
+	 alternateclass is sniper si 
+	 meta is no
+atunci hero is widowmaker
+
+regula 45
+daca playerexperience is medium si
+	 range is medium si
+	 waytoplay is attack si
+	 meta is yes si
+	 class is offensive si
+	 personality_defect is emotional
+atunci hero is tracer
+
+regula 46
+daca playerexperience is low si
+	 range is close si
+	 waytoplay is attack si
+	 meta is yes si
+	 class is offensive si
+	 personality_defect is emotional
+atunci hero is reaper
+
+regula 47
+daca playerexperience is medium si
+	 range is medium si
+	 waytoplay is human_shield si
+	 meta is yes si
+	 class is tank si
+	 personality_defect is emotional
+atunci hero is roadhog
+
+regula 48
+daca playerexperience is medium si
+	 range is close si
+	 waytoplay is human_shield si
+	 meta is no si
+	 class is tank si
+	 personality_defect is emotional
+atunci hero is winston
+
+regula 49
+daca playerexperience is medium si
+	 range is close si
+	 waytoplay is defense si
+	 meta is no si
+	 class is defensive si
+	 personality_defect is extremely-calculated
+atunci hero is torbjorn
+
+regula 50
+daca playerexperience is low si
+	 range is high si
+	 waytoplay is backer si
+	 meta is yes si
+	 class is support si
+	 personality_defect is emotional
+atunci hero is mercy
+
+regula 51
+daca playerexperience is medium si
+	 range is close si
+	 waytoplay is backer si
+	 meta is no si
+	 class is support si
+	 personality_defect is extremely-calculated
+atunci hero is symmetra
+
+regula 52
+daca playerexperience is medium si
+	 range is high si
+	 waytoplay is attack si
+	 meta is yes si
+	 class is offensive si
+	 personality_defect is emotional
+atunci hero is pharah
+
+regula 53
+daca playerexperience is high si
+	 range is medium si
+	 waytoplay is backer si
+	 meta is yes si
+	 class is support si
+	 personality_defect is extremely-calculated
+atunci hero is zenyatta
+
+regula 54
+daca playerexperience is high si
+	 range is medium si
+	 waytoplay is attack si
+	 meta is no si
+	 class is offensive si
+	 personality_defect is extremely-calculated
+atunci hero is sombra
+
+regula 55
+daca playerexperience is medium si
+	 range is high si
+	 waytoplay is human_shield si
+	 meta is yes si
+	 class is tank si
+	 personality_defect is emotional
+atunci hero is d.va
+
+regula 56
+daca playerexperience is medium si
+	 range is close si
+	 waytoplay is attack si
+	 meta is yes si
+	 class is offensive si
+	 personality_defect is emotional
+atunci hero is mccree
+
+regula 57
+daca playerexperience is high si
+	 range is close si
+	 waytoplay is human_shield si
+	 meta is yes si
+	 class is tank si
+	 personality_defect is emotional
+atunci hero is zarya
+
+regula 58
+daca playerexperience is high si
+	 range is high si
+	 waytoplay is backer si
+	 meta is yes si
+	 class is support si
+	 personality_defect is extremely-calculated
+atunci hero is ana
+
+regula 59
+daca playerexperience is medium si
+	 range is close si
+	 waytoplay is attack si
+	 meta is yes si
+	 class is offensive si
+	 personality_defect is extremely-calculated
+atunci hero is genji
+
+regula 60
+daca playerexperience is medium si
+	 range is high si
+	 waytoplay is defense si
+	 meta is yes si
+	 class is defensive si
+	 personality_defect is emotional
+atunci hero is mei
+
+regula 61
+daca playerexperience is high si
+	 range is high si
+	 waytoplay is defense si
+	 meta is yes si
+	 class is defensive si
+	 personality_defect is emotional
+atunci hero is hanzo
+
+intreaba meta
+optiuni(da nu)
+afiseaza 'Este campionul in meta?'
+
+intreaba range
+optiuni(close medium long)
+afiseaza 'Care este distanta la care eroul sa poata sa traga cu acuratete?'
+
+intreaba playexperience
+optiuni(low medium high)
+afiseaza 'Cata experienta ai cu acest joc?'
+
+intreaba role
+optiuni(dps protector assisting_players attract_atention)
+afiseaza "Ce rol vrei sa ai?"
+
+intreaba playmode
+optiuni(attacking aggroing healing protecting giving_support putting_traps assassinating)
+afiseaza "Care e modul tau de a juca?"
+
+intreaba personality
+optiuni(aggresive passive)
+afiseaza "Ce personalitate ai?"
+
+intreaba attitude
+optiuni(perseverent attentive)
+afiseaza "Ce fel de atitudine ai?"
+
+intreaba quality
+optiuni(patient dynamic)
+afiseaza "Ce calitate ai?"
+
+intreaba attribute
+optiuni(tanking_damage evading_damage healing_damage protecting_others assisting_teammates)
+afiseaza "Care dintre atribute le ai?"
+
+intreaba negative
+optiuni(impatient,ruthless,rude,unpredictable,harsh,naughty,gullible,sneaky,overcritical,cynical,emotional,extremely-calculated)
+afiseaza "Care este un atribut negativ de al tau?"
