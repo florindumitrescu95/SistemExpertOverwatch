@@ -1,0 +1,246 @@
+erou:Soldier76
+imagine:
+abilitati:
+->Heavy Pulse Rifle descriere:[Soldier: 76’s rifle remains particularly steady while unloading fully-automatic pulse fire.]
+->Helix Rockets descriere:[Tiny rockets spiral out of Soldier: 76’s Pulse Rifle in a single burst. The rockets’ explosion damages enemies in a small radius.]
+->Sprint descriere:[Whether he needs to evade a firefight or get back into one, Soldier: 76 can rush ahead in a burst of speed. His sprint ends if he takes an action other than charging forward.]
+->Biotic Field descriere:[Soldier: 76 plants a biotic emitter on the ground. Its energy projection restores health to 76 and any of his squadmates within the field.]
+->Ultimate:Tactical Visor descriere:[Soldier: 76’s pinpoint targeting visor “locks” his aim on the threat closest to his crosshairs. If an enemy leaves his line of sight, Soldier: 76 can quickly switch to another target.]
+
+-------------------------------------------------
+
+erou:Bastion
+imagine:
+abilitati:
+->Ironclad descriere:[Reduces damage taken while transformed.]
+->Configuration: Recon descriere:[In Recon mode, Bastion is fully mobile, outfitted with a submachine gun that fires steady bursts of bullets at medium range.]
+->Configuration: Sentry descriere:[In Sentry mode, Bastion is a stationary powerhouse equipped with a gatling gun capable of unleashing a hail of bullets. The gun's aim can be "walked" across multiple targets, dealing devastating damage at short to medium range.]
+->Reconfigure descriere:[Bastion transforms between its two primary combat modes to adapt to battlefield conditions.]
+->Self-Repair descriere:[Bastion restores its health.]
+->Ultimate:
+Configuration: Tank descriere:[In Tank mode, Bastion extends wheeled treads and a powerful long-range cannon. The cannon’s explosive shells demolish targets in a wide blast radius, but Bastion can only remain in this mode for a limited time.]
+
+-----------------------------------------------
+
+erou:Lucio
+imagine:
+abilitati:
+->Wall Ride descriere:[Jump onto a wall to ride along it.]
+->Sonic Amplifier descriere:[Lúcio can hit his enemies with sonic projectiles.]
+->Soundwave descriere:[Lúcio can knock his enemies back with a blast of sound.]
+->Crossfade descriere:[Lúcio continuously energizes himself — and nearby teammates — with music. He can switch between two songs: one amplifies movement speed, while the other regenerates health.]
+->Amp It Up descriere:[Lúcio increases the volume on his speakers, boosting the effects of his songs.]
+->Ultimate:Sound Barrier descriere:[Protective waves radiate out from Lúcio’s Sonic Amplifier, briefly providing him and nearby allies with personal shields.]
+
+-----------------------------------------------
+
+erou:Reinhardt
+imagine:
+abilitati:
+->Rocket Hammer descriere:[Reinhardt’s Rocket Hammer is an exemplary melee weapon, able to deal punishing damage in a wide arc with every swing.]
+->Barrier Field descriere:[Reinhardt projects a broad, forward-facing energy shield, which can absorb substantial damage before it is destroyed. Though Reinhardt can protect himself and his companions behind the shield, he cannot attack while sustaining it.]
+->Charge descriere:[Reinhardt charges forth in a straight line, grabbing hold of enemies in his path. If he collides with a wall, foes he’s carrying suffer extreme damage.]
+->Fire Strike descriere:[By whipping his Rocket Hammer forward, Reinhardt slings a flaming projectile which pierces and damages any enemies it touches.]
+->Ultimate:Earthshatter descriere:[Reinhardt forcefully slams his rocket hammer into the ground, knocking down and damaging all enemies in front of him.]
+
+----------------------------------------------
+
+erou:Junkrat
+imagine:
+abilitati:
+->Total Mayhem descriere:[Junkrat's deranged sense of humor persists past his death. If killed, he drops several live grenades.]
+->Frag Launcher descriere:[Junkrat's Frag Launcher lobs grenades a significant distance. They bounce to reach their destination, and blow up when they strike an enemy.]
+->Concussion Mine descriere:[After placing one of his homemade Concussion Mines, Junkrat can trigger it to damage enemies and send them flying... or propel himself through the air.]
+->Steel Trap descriere:[Junkrat tosses out a giant, metal-toothed trap. Should an enemy wander too close to the trap, it clamps on, injuring and immobilizing them.]
+->Ultimate:RIP-Tire descriere:[Junkrat revs up a motorized tire bomb and sends it rolling across the battlefield, climbing over walls and obstacles. He can remotely detonate the RIP-Tire to deal serious damage to enemies caught in the blast, or just wait for it to explode on its own. Junkrat himself is defenseless during the attack so find cover before using it.]
+
+-----------------------------------------------
+erou:Widowmaker
+imagine:
+abilitati:
+->Widow's Kiss: Sniper descriere:[Widowmaker’s versatile sniper rifle is ideal for scope-aimed shots at distant targets.]
+->Widow's Kiss: Assault descriere:[Should targets close to medium range, the rifle can also be fired in fully-automatic mode.]
+->Grappling Hook descriere:[Widowmaker launches a grappling hook towards the location she’s aiming at – when the hook connects with a scalable surface, she’s quickly drawn towards it, allowing her to expand her view of the battlefield and evade or flank targets.]
+->Venom Mine descriere:[Widowmaker adheres a swiftly-arming venom mine to nearly any surface. When a target wanders within range of the mine’s motion trigger, it explodes, delivering poison gas to any enemies in the vicinity.]
+->Ultimate:Infra-Sight descriere:[Widowmaker’s recon visor allows her to see the heat signatures of her targets through walls and objects for a moderate amount of time. This enhanced vision is shared with her allies.]
+
+-----------------------------------------------
+erou:Tracer
+imagine:
+abilitati:
+->Pulse Pistols descriere:[Tracer rapid-fires both of her pistols.]
+->Blink descriere:[Tracer zips horizontally through space in the direction she’s moving, and reappears several yards away. She stores up to three charges of the blink ability and generates more every few seconds.]
+->Recall descriere:[Tracer bounds backward in time, returning her health, ammo and position on the map to precisely where they were a few seconds before.]
+->Ultimate:Pulse Bomb descriere:[Tracer lobs a large bomb that adheres to any surface or unfortunate opponent it lands on. After a brief delay, the bomb explodes, dealing high damage to all enemies within its blast radius.]
+
+-----------------------------------------------
+
+erou:Reaper
+imagine:
+abilitati:
+->The Reaping descriere:[Collect Soul Globes to restore health.]
+->Hellfire Shotguns descriere:[Reaper tears enemies apart with twin shotguns.]
+->Wraith Form descriere:[Reaper becomes a shadow for a short period of time. While in this form, he takes no damage and is able to pass through enemies, but cannot fire his weapons or use other abilities.]
+->Shadow Step descriere:[After marking a destination, Reaper disappears and reappears at that location.]
+->Ultimate:Death Blossom descriere:[In a blur of motion, Reaper empties both Hellfire Shotguns at breakneck speed, dealing massive damage to all nearby enemies.]
+
+----------------------------------------------
+
+erou:Roadhog
+imagine:
+abilitati:
+->Scrap Gun(Primary Fire) descriere:[Roadhog's Scrap Gun fires short-range blasts of shrapnel with a wide spread.]
+->Scrap Gun(Secondary Fire) descriere:[Alternatively, it can launch a shrapnel ball that detonates farther away, scattering metal fragments from the point of impact.]
+->Take a Breather descriere:[Roadhog restores a chunk of his health over a brief period of time.]
+->Chain Hook descriere:[Roadhog hurls his chain at a target; if it catches, he yanks them into close range.]
+->Ultimate:Whole Hog descriere:[After cramming a top-loader onto his Scrap Gun, Roadhog pours in ammo. For a short time, he can crank out a stream of shrapnel that knocks back enemies.]
+
+-----------------------------------------------
+
+erou:Winston
+imagine:
+abilitati:
+->Tesla Cannon descriere:[Winston’s weapon fires a short-range electric barrage for as long as he holds down the trigger.]
+->Jump Pack descriere:[Assisted by his energy pack, Winston lunges through the air, dealing significant damage and staggering nearby enemies when he lands.]
+->Barrier Projector descriere:[Winston’s barrier projector extends a bubble-shaped field that absorbs damage until it's destroyed. Allies protected by the barrier can return fire from within it.]
+->Ultimate:Primal Rage descriere:[Winston embraces his animal nature, significantly boosting his health and making him very difficult to kill, strengthening his melee attack, and allowing him to use his Jump Pack ability more frequently. While raging, Winston can only make melee and Jump Pack attacks.]
+
+----------------------------------------------
+
+erou:Torbjorn
+imagine:
+abilitati:
+->Scrap Collector descriere:[Collect scrap to gain resources.]
+->Rivet Gun(Primary Fire) descriere:[Torbjörn fires rivets at long range.]
+->Rivet Gun(Secondary Fire) descriere:[Torbjörn ejects molten metal from his gun in a short, close-range burst.]
+->Forge Hammer descriere:[Torbjörn uses his multipurpose hammer to build, upgrade and repair turrets. In a pinch, it can also be swung as a weapon.]
+->Build Turret descriere:[Torbjörn constructs an enemy-tracking autocannon. He can use his Forge Hammer to repair or upgrade it, increasing its health and adding a second cannon barrel.]
+->Armor Pack descriere:[Torbjörn deploys an armor upgrade; either he or his allies can pick it up to absorb some damage.]	
+->Ultimate:Molten Core descriere:[After overheating his personal forge, Torbjörn gains a significant amount of armor and scrap. He also attacks (and builds and repairs turrets) far faster than normal.]
+
+-----------------------------------------------
+
+erou:Mercy
+imagine:
+abilitati:
+->	Angelic Descent descriere:[Propelled by her Valkyrie suit, Mercy slows the speed of her descent from great heights.]
+->Caduceus Staff descriere:[Mercy engages one of two beams that connect to an ally. By maintaining the beams, she can either restore that ally’s health or increase the amount of damage they deal.]
+->Caduceus Blaster descriere:[Mercy shoots a round from her sidearm. It's best reserved for emergency personal defense.]
+->Guardian Angel descriere:[Mercy flies towards a targeted ally, allowing her to reach them quickly and provide assistance in crucial moments.]
+->Ultimate:Resurrect descriere:[Mercy radiates restorative power, bringing nearby dead allies back into the fight with full health.]
+
+-----------------------------------------------
+
+erou:Symmetra
+imagine:
+abilitati:
+->Photon Projector descriere:[Symmetra’s weapon emits a short-range beam that homes in on a nearby enemy, dealing continuous damage that increases the longer it is connected.]
+->Energy Ball descriere:[The projector can also release a charged energy ball that deals high damage.]
+->Sentry Turret descriere:[Symmetra sets up a small turret that automatically fires speed-reducing blasts at the nearest enemy within range. Several turrets can be built on the battlefield at once.]
+->Photon Barrier descriere:[Symmetra projects a moving barrier that absorbs damage as it travels forward.]
+->Ultimate:Teleporter descriere:[Symmetra places a teleporter exit pad at her current location, and connects it to a teleporter entry pad at her team’s starting point. Allies can travel through the entry pad to the exit pad instantly, enabling them to return to the fight swiftly after being defeated.]
+->Ultimate:Shield Generator descriere:[Symmetra deploys a wide-radius generator that provides increased shielding to her entire team.]
+
+-----------------------------------------------
+erou:Pharah
+imagine:
+abilitati:
+->Hover descriere:[Hold to Hover.]
+->Rocket Launcher descriere:[Pharah’s primary weapon launches rockets that deal significant damage in a wide blast radius.]
+->Jump Jet descriere:[Propelled by her suit’s thrusters, Pharah soars high into the air.]
+->Concussive Blast descriere:[Pharah looses a wrist rocket that knocks back any enemies it strikes.]
+->Ultimate:Barrage descriere:[Pharah directs a continuous salvo of mini-rockets to destroy groups of enemies.]
+
+-----------------------------------------------
+erou:Zenyatta
+imagine:
+abilitati:
+->Orb of Destruction descriere:[Zenyatta projects his destructive energy orbs individually.]
+->Orb Volley descriere:[Zenyatta projects his destructive energy orbs in a rapid-fire volley after a few seconds spent gathering power.]
+->Orb of Harmony descriere:[Zenyatta casts an orb over the shoulder of a targeted ally. So long as Zenyatta maintains line of sight, the orb slowly restores health to his ally. Only one ally can receive the orb's benefit at a time.]
+->Orb of Discord descriere:[Attaching the orb of discord to an opponent amplifies the amount of damage they receive for as long as Zenyatta maintains line of sight. Only one opponent can suffer the orb's effects at a time.]
+->Ultimate:Transcendence descriere:[Zenyatta enters a state of heightened existence for a short period of time. While transcendent, Zenyatta cannot use abilities or weapons, but is immune to damage and automatically restores his health and that of nearby allies.]
+
+-----------------------------------------------
+erou:Sombra
+imagine:
+abilitati:
+->Opportunist descriere:[Sombra detects critically injured enemies through walls.]
+->Machine Pistol descriere:[Sombra’s fully-automatic machine pistol fires in a short-range spread.]
+->Hack descriere:[Sombra hacks enemies to temporarily stop them from using their abilities, or hacks first aid kits to make them useless to her opponents.]
+->Thermoptic Camo descriere:[Sombra becomes invisible for a short period of time, during which her speed is boosted considerably. Attacking, using offensive abilities, or taking damage disables her camouflage.]
+->Translocator descriere:[Sombra tosses out a translocator beacon. She can instantly return to the beacon’s location while it is active (including when it’s in mid-flight).]
+->Ultimate:EMP descriere:[Sombra discharges electromagnetic energy in a wide radius, destroying enemy barriers and shields and hacking all opponents caught in the blast.]
+
+-----------------------------------------------
+erou:D.Va
+imagine:
+abilitati:
+->Fusion Cannons descriere:[D.Va's mech is equipped with twin short-range rotating cannons. They lay down continuous, high-damage fire without needing to reload, but slow D.Va’s movement while they’re active.]
+->Defense Matrix descriere:[D.Va can activate this forward-facing targeting array to shoot incoming projectiles out of the air.]
+->Boosters descriere:[D.Va’s mech launches into the air, her momentum carrying her forward. She can turn and change directions or barrel through her enemies, knocking them back.]
+->Light Gun descriere:[While outside of her mech, D.Va can continue the fight with a mid-range automatic blaster.]
+->Ultimate:Self-Destruct descriere:[D.Va ejects from her mech and sets its reactor to explode, dealing massive damage to nearby opponents.]
+->Ultimate:Call Mech descriere:[If her armored battle suit is destroyed, D.Va can call down a fresh mech and return to the fray.]
+
+-----------------------------------------------
+erou:McCree
+imagine:
+abilitati:
+->Peacekeeper descriere:[McCree fires off a round from his trusty six-shooter.]
+->Fan the Hammer descriere:[McCree can fan the Peacekeeper’s hammer to swiftly unload the entire cylinder.]
+->Combat Roll descriere:[McCree dives in the direction he’s moving, effortlessly reloading his Peacekeeper in the process.]
+->Flashbang descriere:[McCree heaves a blinding grenade that explodes shortly after it leaves his hand. The blast staggers enemies in a small radius.]
+->Ultimate:Deadeye descriere:[Focus. Mark. Draw. McCree takes a few precious moments to aim; when he’s ready to fire, he shoots every enemy in his line of sight. The weaker his targets are, the faster he’ll line up a killshot.]
+
+-----------------------------------------------
+erou:Zarya
+imagine:
+abilitati:
+->Energy descriere:[Damage blocked increases Particle Cannon damage.]
+->Particle Cannon(Primary Fire) descriere:[Zarya’s mighty Particle Cannon unleashes a short-range beam of destructive energy.]
+->Particle Cannon(Secondary Fire) descriere:[Alternatively, Zarya can lob an explosive charge to strike multiple opponents.]
+->Particle Barrier descriere:[The Particle Cannon can emit a personal barrier that shields Zarya against incoming attacks, redirecting their energy to enhance her weapon’s damage and the width of its beam.]
+->Projected Barrier descriere:[Zarya surrounds one of her teammates with an energy barrier that simultaneously absorbs fire and boosts the power of her Particle Cannon.]
+->Ultimate:Graviton Surge descriere:[Zarya launches a gravity bomb that draws in enemy combatants and deals damage while they’re trapped.]
+
+----------------------------------------------
+erou:Ana
+imagine:
+abilitati:
+->Biotic Rifle descriere:[Ana’s rifle shoots darts that can restore health to her allies or deal ongoing damage to her enemies. She can use the rifle’s scope to zoom in on targets and make highly accurate shots. While Ana does relatively less damage compared to other snipers, the Biotic Rifle allows Ana to switch back and forth from the roles of combatant to healer.]
+->Sleep Dart descriere:[Ana fires a dart from her sidearm, rendering an enemy unconscious (though any damage will rouse them).]
+->Biotic Grenade descriere:[Ana tosses a biotic bomb that deals damage to enemies and heals allies in a small area of effect. Affected allies briefly receive increased healing from all sources, while enemies caught in the blast cannot be healed for a few moments.]
+->Ultimate:Nano Boost descriere:[After Ana hits one of her allies with a combat boost, they deal more damage and take less damage from enemies’ attacks.]
+
+-----------------------------------------------
+erou:Genji
+imagine:
+abilitati:
+->Cyber-Agility descriere:[Thanks to his cybernetic abilities, Genji can climb walls and perform jumps in mid-air.]
+->Shuriken descriere:[Genji looses three deadly throwing stars in quick succession.]
+->Fan of Blades descriere:[Alternatively, he can throw three shuriken in a wider spread.]
+->Swift Strike descriere:[Genji darts forward, slashing with his wakizashi and passing through foes in his path. If Genji eliminates a target, he can instantly use this ability again.]
+->Deflect descriere:[With lightning-quick swipes of his wakizashi, Genji reflects an oncoming projectile and sends it rebounding towards his opponent.]
+->Ultimate:Dragonblade descriere:[Genji brandishes his katana for a brief period of time. Until he sheathes his katana, Genji can deliver killing strikes to any targets within his reach.]
+
+-----------------------------------------------
+erou:Mei
+imagine:
+abilitati:
+->Endothermic Blaster descriere:[Mei’s blaster unleashes a concentrated, short-range stream of frost that damages, slows, and ultimately freezes enemies in place.]
+->Icicle descriere:[Mei can also use her blaster to shoot icicle-like projectiles at medium range.]
+->Cryo-Freeze descriere:[Mei instantly surrounds herself with a block of thick ice. She heals and ignores damage while encased, but cannot move or use abilities.]
+->Ice Wall descriere:[Mei generates an enormous ice wall that obstructs lines of sight, stops movement, and blocks attacks.]
+->Ultimate:
+Blizzard descriere:[Mei deploys a weather-modification drone that emits gusts of wind and snow in a wide area. Enemies caught in the blizzard are slowed and take damage; those who linger too long are frozen solid.]
+
+-----------------------------------------------
+erou:Hanzo
+imagine:
+abilitati:
+->Wall Climb descriere:[Jump at walls to climb up them.]
+->Storm Bow descriere:[Hanzo nocks and fires an arrow at his target.]
+->Sonic Arrow descriere:[Hanzo launches an arrow that contains a sonar tracking device. Any enemy within its detection radius is visibly marked, making them easier for Hanzo and his allies to hunt down.]
+->Scatter Arrow descriere:[Hanzo shoots a fragmenting arrow that ricochets off walls and objects and can strike multiple targets at once.]
+->Ultimate:Dragonstrike descriere:[Hanzo summons a Spirit Dragon which travels through the air in a line. It passes through walls in its way, devouring any enemies it encounters.]
