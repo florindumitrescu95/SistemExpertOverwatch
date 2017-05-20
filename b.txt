@@ -1,0 +1,8 @@
+scop ^ hero.
+
+intrebare --> meta
+text ^ 'Este campionul in meta?'
+opt{
+da | nu
+}
+.

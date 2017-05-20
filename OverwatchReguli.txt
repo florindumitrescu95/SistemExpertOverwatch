@@ -401,7 +401,7 @@ premise ^
 	}
 }.
 R --> 44
-{hero ^ soldier76 :: fact_cert ^ 77/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ soldier76 :: fact_cert ^ 77
 premise ^
 	{
 	 playerexperience :==: low
@@ -410,7 +410,7 @@ premise ^
 	}
 }.
 R --> 45
-{hero ^ bastion :: fact_cert ^ 77/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ bastion :: fact_cert ^ 77
 premise ^
 	{
 	 playerexperience :==: low
@@ -450,7 +450,7 @@ premise ^
 }.
 
 R --> 49
-{hero ^ tracer :: fact_cert ^ 80 /* atribut color diferit pentru acest erou */
+{hero ^ tracer :: fact_cert ^ 80 
 premise ^
 	{
 	 playerexperience :==: medium
@@ -534,7 +534,7 @@ premise ^
 }.
 
 R --> 55
-{hero ^ winston :: fact_cert ^ 65 /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ winston :: fact_cert ^ 65 
 premise ^
 	{
 	 playerexperience :==: medium
@@ -680,7 +680,7 @@ premise ^
 }.
 
 R --> 66
-{hero ^ symmetra :: fact_cert ^ 60  /*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ symmetra :: fact_cert ^ 60  
 premise ^
 	{
 	 waytoplay :==: backer
@@ -713,7 +713,7 @@ premise ^
 }.
 
 R --> 69
-{hero ^ mei :: fact_cert ^ 90/* atribut color diferit pentru acest erou */
+{hero ^ mei :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -741,7 +741,7 @@ premise ^
 }.
 
 R --> 71
-{hero ^ hanzo :: fact_cert ^ 90  /* atribut color diferit pentru acest erou */
+{hero ^ hanzo :: fact_cert ^ 90  
 premise ^
 	{
 	 playerexperience :==: high
@@ -769,7 +769,7 @@ premise ^
 }.
 
 R --> 73
-{hero ^ tracer :: fact_cert ^ 60 //Drum separat
+{hero ^ tracer :: fact_cert ^ 60 
 premise ^
 	{
 	 color :==: orange
@@ -779,7 +779,7 @@ premise ^
 }.
 
 R --> 74
-{hero ^ tracer :: fact_cert ^ 65//Drum separat
+{hero ^ tracer :: fact_cert ^ 65
 premise ^
 	{
 	 range :==: medium
@@ -880,16 +880,3 @@ blue | brown | red | white | green | orange | pink | black | purple
 }
 .
 
-/*
-Exemplu de combinatii de atribute care nu dau solutii:
-
-
-	 playerexperience :==: low
-	 &&range :==: close
-	 &&waytoplay :==: defense
-	 &&class :==: defensive
-	 &&meta
-	 &&personality_defect :==: emotional
-	 &&color :==: purple
-	 
-	 */
