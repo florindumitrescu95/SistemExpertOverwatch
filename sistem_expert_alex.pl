@@ -395,23 +395,23 @@ proceseaza([end_of_file]):-!.
 proceseaza(L) :-
 trad(R,L,[]),assertz(R), !.
 trad(scop(X)) --> [scop,'^',X].
-
+trad(scop(X)) --> [scopul,X].
 trad(interogabil(Atr,M,P)) --> 
 [intrebare,'-','-','>',Atr],afiseaza(Atr,P),lista_optiuni(M).
-trad(regula(N,premise(Daca),concluzie(Atunci,F))) --> identificator(N),daca(Daca),atunci(Atunci,F).
+trad(regula(N,premise(Daca),concluzie(Atunci,F))) --> identificator(N),['{'],atunci(Atunci,F),daca(Daca),['}'].
 trad('Eroare la parsare'-L,L,_).
 
 lista_optiuni(M) --> [opt,'{'],lista_de_optiuni(M).
-lista_de_optiuni([Element]) -->  [Element,'}','.'].
+lista_de_optiuni([Element]) -->  [Element,'}'].
 lista_de_optiuni([Element|T]) --> [Element,'|'],lista_de_optiuni(T).
 
 afiseaza(_,P) -->  [text,'^',P].
 afiseaza(P,P) -->  [].
-identificator(N) --> [r,'-','-','>',N,'{'].
+identificator(N) --> [r,'-','-','>',N].
 
 daca(Daca) --> [premise,'^','{'],lista_premise(Daca).
 
-lista_premise([Daca]) --> propoz(Daca),['}','}','.'].
+lista_premise([Daca]) --> propoz(Daca),['}'].
 lista_premise([Prima|Celalalte]) --> propoz(Prima),['&','&'],lista_premise(Celalalte).
 
 

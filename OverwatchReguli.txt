@@ -419,7 +419,7 @@ premise ^
 	}
 }.
 R --> 46
-{hero ^ reinhardt :: fact_cert ^ 77/*numar scazut de atribute pentru a ajunge la aceeasi solutie */
+{hero ^ reinhardt :: fact_cert ^ 77
 premise ^
 	{
 	 playerexperience :==: low
@@ -624,7 +624,7 @@ premise ^
 }.
 
 R --> 62
-{hero ^ "d.va" :: fact_cert ^ 100
+{hero ^ d_va :: fact_cert ^ 100
 premise ^
 	{
 	 playerexperience :==: medium
@@ -783,8 +783,8 @@ R --> 74
 premise ^
 	{
 	 range :==: medium
-	 meta :==: yes
-	 personality_defect :==: emotional
+	 &&meta :==: yes
+	 &&personality_defect :==: emotional
 	}
 }.
 
