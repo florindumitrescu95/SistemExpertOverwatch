@@ -793,90 +793,77 @@ intrebare --> meta
 text ^ 'Este campionul in meta?'
 opt{
 da | nu
-}
-.
+}.
 
 intrebare --> range
 text ^ 'Care este distanta la care eroul sa poata sa traga cu acuratete?'
 opt{
 close | medium | long
-}
-.
+}.
 
 intrebare --> playexperience
 text ^ 'Cata experienta ai cu acest joc?'
 opt{
 low | medium | high
-}
-.
+}.
 
 intrebare --> role
 text ^ 'Ce rol vrei sa ai?'
 opt{
 dps | protector | assisting_players | attract_atention
-}
-.
+}.
 
 intrebare --> playmode
 text ^ 'Care e modul tau de a juca?'
 opt{
 attacking | protecting | healing | aggroing | giving_support | putting_traps | assassinating
-}
-.
+}.
 
 intrebare --> personality
 text ^ 'Ce personalitate ai?'
 opt{
 Adventurous | Independent | Active | Calm | Caring | Adaptable | Calculating | Spontaneous
-}
-.
+}.
 
 intrebare --> attitude
 text ^ 'Ce fel de atitudine ai?'
 opt{
 Intuitive | Stoic | Logical | Selfless | Precise | Crafty | Observant
-}
-.
+}.
 
 intrebare --> quality
 text ^ 'Ce calitate ai?'
 opt{
 energetic | prudent | anticipative | organized | protective | helpful | reflective | rational 
-}
-.
+}.
 
 intrebare --> attribute
 text ^ 'Care dintre atribute le ai?'
 opt{
 tanking_damage | evading_damage | healing_damage | protecting_others | assisting_teammates 
-}
-.
+}.
 
 intrebare --> negative
 text ^ 'Care este un atribut negativ de al tau?'
 opt{
 impatient | ruthless | rude | unpredictable | harsh | naughty | gullible | sneaky | overcritical | cynical | emotional | extremely-calculated
-}
-.
+}.
 
 intrebare --> color
 text ^ 'Care este culoarea ta preferata?'
 opt{
 blue | brown | red | white | green | orange | pink | black | purple  
-}
-.
+}.
 
 intrebare --> hair
 text ^ 'Ce culoare de par vrei?'
 opt{
 blue | brown | red | white | green | orange | pink | black | purple | no_hair
-}
-.
+}.
 
 intrebare --> costume
 text ^ 'Care este culoarea costumului?'
 opt{
 blue | brown | red | white | green | orange | pink | black | purple  
-}
-.
+}.
 

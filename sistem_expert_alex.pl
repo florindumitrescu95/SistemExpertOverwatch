@@ -1,4 +1,3 @@
-
 :-use_module(library(lists)).
 :-use_module(library(system)).
 :-use_module(library(file_systems)).
@@ -40,9 +39,6 @@ Regula ==utiliz, Regula1=Regula),
 lista_float_int(Reguli,Reguli1).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
 un_pas(Rasp,OptiuniUrm,MesajUrm):-scop(Atr),(Rasp \== null,intreaba_acum(Rasp) ; true),
 								determina1(Atr,OptiuniUrm,MesajUrm), afiseaza_scop(Atr).
 
@@ -121,6 +117,7 @@ Val_interm >= 20,
 dem1(T,Val_interm,Val_finala,Istorie,OptiuniUrm,MesajUrm) ;true).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 pornire :-
 retractall(interogat(_)),
 retractall(fapt(_,_,_)),
@@ -147,9 +144,33 @@ executa([iesire]):-!.
 executa([_|_]) :-
 write('Comanda incorecta! '),nl.
 
+nume_fisier(NumeFisier,Val,FC) :-
+atom_concat('demonstratie_solutie_pt_/###',Val,Rez),
+atom_concat(Rez,'###',Rez1),
+number_chars(FC,N),
+atom_chars(NR,N),
+atom_concat(Rez1,NR,Rez2),
+atom_concat(Rez2,'.txt',NumeFisier).
+
+%f) creem directorul in care se salveaza fisierele cu demonstratiile
+creare_director :-
+((\+directory_exists('demonstratie_solutie_pt_eroi'))->(make_directory('demonstratie_solutie_pt_eroi'));(delete_directory('demonstratie_solutie_pt_eroi',[if_nonempty(delete)]),make_directory('demonstratie_solutie_pt_eroi'))).
+
+
+%f)crearea fisierelor
+afiseaza_demonstratii :- 
+scop(Atr),
+telling(Vechi),
+(fapt(av(Atr,Val),FC,_),
+nume_fisier(NumeFisier,Val,FC),
+tell(NumeFisier),
+cum(av(Atr,Val)),
+told,fail ; true),
+tell(Vechi).
+
 scopuri_princ :-
 scop(Atr),determina(Atr), afiseaza_scop(Atr),fail.
-scopuri_princ.
+scopuri_princ:- creare_director, afiseaza_demonstratii.
 
 determina(Atr) :-
 realizare_scop(av(Atr,_),_,[scop(Atr)]),!.
@@ -171,8 +192,12 @@ FC1 is integer(FC),write(FC1).
 realizare_scop(not Scop,Not_FC,Istorie) :-
 realizare_scop(Scop,FC,Istorie),
 Not_FC is - FC, !.
+realizare_scop(av(Atr,_),FC,_) :-
+fapt(av(Atr,'nu_conteaza'),FC,_), !.
 realizare_scop(Scop,FC,_) :-
 fapt(Scop,FC,_), !.
+
+
 realizare_scop(Scop,FC,Istorie) :-
 pot_interoga(Scop,Istorie),
 !,realizare_scop(Scop,FC,Istorie).
@@ -221,25 +246,27 @@ afis_reguli(X).
 afis_regula(N) :-
 regula(N, premise(Lista_premise),
 concluzie(Scop,FC)),NN is integer(N),
-scrie_lista(['regula  ',NN]),
-scrie_lista(['  Daca']),
-scrie_lista_premise(Lista_premise),
-scrie_lista(['  Atunci']),
+scrie_lista(['R','-','-','>',NN,'\n','{','  hero','^']),
 transformare(Scop,Scop_tr),
 append(['   '],Scop_tr,L1),
 FC1 is integer(FC),append(L1,[FC1],LL),
-scrie_lista(LL),nl.
+scrie_lista(LL),nl,scrie_lista('\n','premise',' ^ ','\n','{','\n'),
+scrie_lista_premise(ListaPremise),nl.
 
 scrie_lista_premise([]).
 scrie_lista_premise([H|T]) :-
+
 transformare(H,H_tr),
-tab(5),scrie_lista(H_tr),
+scrie_lista(H_tr),
+
 scrie_lista_premise(T).
 
 transformare(av(A,da),[A]) :- !.
-transformare(not av(A,da), [not,A]) :- !.
-transformare(av(A,nu),[not,A]) :- !.
-transformare(av(A,V),[A,este,V]).
+transformare(not av(A,da), ['//',A]) :- !.
+transformare(av(A,nu),['//',A]) :- !.
+transformare(av(A,V),[A,':==:',V]).
+
+
 
 premisele(N) :-
 regula(N, premise(Lista_premise), _),
@@ -251,13 +278,13 @@ cum(Scop),
 cum_premise(X).
         
 interogheaza(Atr,Mesaj,[da,nu],Istorie) :-
-!,write(Mesaj),nl,
-de_la_utiliz(X,Istorie,[da,nu]),
+!,write(Mesaj),nl,write('da','nu','nu_stiu','nu_conteaza'),
+de_la_utiliz(X,Istorie,[da,nu,nu_stiu,nu_conteaza]),
 det_val_fc(X,Val,FC),
 asserta( fapt(av(Atr,Val),FC,[utiliz]) ).
 interogheaza(Atr,Mesaj,Optiuni,Istorie) :-
-write(Mesaj),nl,
-citeste_opt(VLista,Optiuni,Istorie),
+write(Mesaj),nl,append(Optiuni,[nu_stiu,nu_conteaza],OptiuniNoi),
+citeste_opt(VLista,OptiuniNoi,Istorie),
 assert_fapt(Atr,VLista).
 
 
@@ -368,10 +395,10 @@ proceseaza([end_of_file]):-!.
 proceseaza(L) :-
 trad(R,L,[]),assertz(R), !.
 trad(scop(X)) --> [scop,'^',X].
-trad(scop(X)) --> [scop,X].
+
 trad(interogabil(Atr,M,P)) --> 
 [intrebare,'-','-','>',Atr],afiseaza(Atr,P),lista_optiuni(M).
-trad(regula(N,premise(Daca),concluzie(Atunci,F))) --> identificator(N),atunci(Atunci,F),daca(Daca).
+trad(regula(N,premise(Daca),concluzie(Atunci,F))) --> identificator(N),daca(Daca),atunci(Atunci,F).
 trad('Eroare la parsare'-L,L,_).
 
 lista_optiuni(M) --> [opt,'{'],lista_de_optiuni(M).
@@ -380,7 +407,7 @@ lista_de_optiuni([Element|T]) --> [Element,'|'],lista_de_optiuni(T).
 
 afiseaza(_,P) -->  [text,'^',P].
 afiseaza(P,P) -->  [].
-identificator(N) --> [R,'-','-','>',N,'{'].
+identificator(N) --> [r,'-','-','>',N,'{'].
 
 daca(Daca) --> [premise,'^','{'],lista_premise(Daca).
 
@@ -499,3 +526,5 @@ caractere_in_interiorul_unui_cuvant(C):-
 C>64,C<91;C>47,C<58;
 C==45;C==95;C>96,C<123.
 caracter_numar(C):-C<58,C>=48.
+
+
