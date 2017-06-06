@@ -144,17 +144,19 @@ executa([iesire]):-!.
 executa([_|_]) :-
 write('Comanda incorecta! '),nl.
 
+
 nume_fisier(NumeFisier,Val,FC) :-
-atom_concat('demonstratie_solutie_pt_/###',Val,Rez),
-atom_concat(Rez,'###',Rez1),
+atom_concat('demonstratie_solutie_pt_',Val,Rez),
+atom_concat(Rez,'[',Rez1),
 number_chars(FC,N),
 atom_chars(NR,N),
 atom_concat(Rez1,NR,Rez2),
-atom_concat(Rez2,'.txt',NumeFisier).
+atom_concat(Rez2,']',Rez3),
+atom_concat(Rez3,'.txt',NumeFisier).
 
 %f) creem directorul in care se salveaza fisierele cu demonstratiile
 creare_director :-
-((\+directory_exists('demonstratie_solutie_pt_eroi'))->(make_directory('demonstratie_solutie_pt_eroi'));(delete_directory('demonstratie_solutie_pt_eroi',[if_nonempty(delete)]),make_directory('demonstratie_solutie_pt_eroi'))).
+((\+directory_exists('output_overwatch'))->(make_directory('output_overwatch'));(delete_directory('output_overwatch',[if_nonempty(delete)]),make_directory('output_overwatch'))).
 
 
 %f)crearea fisierelor
@@ -250,7 +252,7 @@ scrie_lista(['R','-','-','>',NN,'\n','{','  hero','^']),
 transformare(Scop,Scop_tr),
 append(['   '],Scop_tr,L1),
 FC1 is integer(FC),append(L1,[FC1],LL),
-scrie_lista(LL),nl,scrie_lista('\n','premise',' ^ ','\n','{','\n'),
+scrie_lista(LL),nl,scrie_lista(['\n','premise',' ^ ','\n','{','\n']),
 scrie_lista_premise(ListaPremise),nl.
 
 scrie_lista_premise([]).
@@ -278,7 +280,7 @@ cum(Scop),
 cum_premise(X).
         
 interogheaza(Atr,Mesaj,[da,nu],Istorie) :-
-!,write(Mesaj),nl,write('da','nu','nu_stiu','nu_conteaza'),
+!,write(Mesaj),nl,write('(da '),write('nu '),write('nu_stiu '),write('nu_conteaza)'),
 de_la_utiliz(X,Istorie,[da,nu,nu_stiu,nu_conteaza]),
 det_val_fc(X,Val,FC),
 asserta( fapt(av(Atr,Val),FC,[utiliz]) ).
@@ -375,27 +377,12 @@ see(F),incarca_reguli,seen,!.
 incarca_reguli :-
 repeat,citeste_propozitie(L),
 proceseaza(L),L == [end_of_file],nl.
-/*R --> 11
-{typeofplaying^team_helper :: fact_cert^100
-premise ^
-	{
-	 personality :==: adaptable
-	 &&attitude :==: selfless
-	 &&quality :==: rational
-    }
-}.
 
-intrebare --> costume
-text^'Care este culoarea costumului?'
-opt{
-blue | brown | red | white | green | orange | pink | black | purple  
-}
-.*/
 proceseaza([end_of_file]):-!.
 proceseaza(L) :-
 trad(R,L,[]),assertz(R), !.
 trad(scop(X)) --> [scop,'^',X].
-trad(scop(X)) --> [scopul,X].
+
 trad(interogabil(Atr,M,P)) --> 
 [intrebare,'-','-','>',Atr],afiseaza(Atr,P),lista_optiuni(M).
 trad(regula(N,premise(Daca),concluzie(Atunci,F))) --> identificator(N),['{'],atunci(Atunci,F),daca(Daca),['}'].

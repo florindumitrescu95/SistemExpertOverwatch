@@ -822,13 +822,13 @@ attacking | protecting | healing | aggroing | giving_support | putting_traps | a
 intrebare --> personality
 text ^ 'Ce personalitate ai?'
 opt{
-Adventurous | Independent | Active | Calm | Caring | Adaptable | Calculating | Spontaneous
+adventurous | independent | active | calm | caring | adaptable | calculating | spontaneous
 }.
 
 intrebare --> attitude
 text ^ 'Ce fel de atitudine ai?'
 opt{
-Intuitive | Stoic | Logical | Selfless | Precise | Crafty | Observant
+intuitive | stoic | logical | selfless | precise | crafty | observant
 }.
 
 intrebare --> quality
@@ -858,7 +858,7 @@ blue | brown | red | white | green | orange | pink | black | purple
 intrebare --> hair
 text ^ 'Ce culoare de par vrei?'
 opt{
-blue | brown | red | white | green | orange | pink | black | purple | no_hair
+yellow | blue | brown | red | white | green | orange | pink | black | purple | no_hair
 }.
 
 intrebare --> costume
