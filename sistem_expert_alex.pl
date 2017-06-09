@@ -145,34 +145,10 @@ executa([_|_]) :-
 write('Comanda incorecta! '),nl.
 
 
-nume_fisier(NumeFisier,Val,FC) :-
-atom_concat('demonstratie_solutie_pt_',Val,Rez),
-atom_concat(Rez,'[',Rez1),
-number_chars(FC,N),
-atom_chars(NR,N),
-atom_concat(Rez1,NR,Rez2),
-atom_concat(Rez2,']',Rez3),
-atom_concat(Rez3,'.txt',NumeFisier).
 
-%f) creem directorul in care se salveaza fisierele cu demonstratiile
-creare_director :-
-((\+directory_exists('output_overwatch'))->(make_directory('output_overwatch'));(delete_directory('output_overwatch',[if_nonempty(delete)]),make_directory('output_overwatch'))).
-
-
-%f)crearea fisierelor
-afiseaza_demonstratii :- 
-scop(Atr),
-telling(Vechi),
-(fapt(av(Atr,Val),FC,_),
-nume_fisier(NumeFisier,Val,FC),
-tell(NumeFisier),
-cum(av(Atr,Val)),
-told,fail ; true),
-tell(Vechi).
 
 scopuri_princ :-
 scop(Atr),determina(Atr), afiseaza_scop(Atr),fail.
-scopuri_princ:- creare_director, afiseaza_demonstratii.
 
 determina(Atr) :-
 realizare_scop(av(Atr,_),_,[scop(Atr)]),!.
@@ -264,9 +240,9 @@ scrie_lista(H_tr),
 scrie_lista_premise(T).
 
 transformare(av(A,da),[A]) :- !.
-transformare(not av(A,da), ['//',A]) :- !.
-transformare(av(A,nu),['//',A]) :- !.
-transformare(av(A,V),[A,':==:',V]).
+transformare(not av(A,da), ['/','/',A]) :- !.
+transformare(av(A,nu),['/','/',A]) :- !.
+transformare(av(A,V),[A,':','=','=',':',V]).
 
 
 
@@ -505,7 +481,7 @@ citeste_cuvant(_,Cuvant,Caracter1) :-
 get_code(Caracter),       
 citeste_cuvant(Caracter,Cuvant,Caracter1). 
 
-caracter_cuvant(C):-member(C,[38,45,61,62,92,94,123,124,125,44,59,58,63,33,46,41,40,95]). %de adaugat caracter
+caracter_cuvant(C):-member(C,[38,45,61,62,92,94,123,124,125,44,59,58,63,33,46,41,40,95,47]). %de adaugat caracter
 
 % am specificat codurile ASCII pentru , ; : ? ! . ) (
 

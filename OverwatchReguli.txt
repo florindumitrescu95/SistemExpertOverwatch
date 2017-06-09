@@ -193,7 +193,7 @@ R --> 20
 {waytoplay ^ attack :: fact_cert ^ 100
 premise ^
 	{
-	 waytoplay :==: damagedealer
+	 typeofplaying :==: damagedealer
 	}
 }.
 
@@ -263,8 +263,8 @@ R --> 28
 {class ^ support :: fact_cert ^ 100
 premise ^
 	{
-	 playmode :==: assisting
-	 &&attribute :==: giving_support
+	 playmode :==: giving_support
+	 &&attribute :==: assisting_teammates
 	}
 }.
 
@@ -326,7 +326,7 @@ premise ^
 }.
 
 R --> 36
-{personality_defect ^ extremely-calculated :: fact_cert ^ 100
+{personality_defect ^ extremely_calculated :: fact_cert ^ 100
 premise ^
 	{
 	 negative :==: sneaky
@@ -334,7 +334,7 @@ premise ^
 }.
 
 R --> 37
-{personality_defect ^ extremely-calculated :: fact_cert ^ 100
+{personality_defect ^ extremely_calculated :: fact_cert ^ 100
 premise ^
 	{
 	 negative :==: overcritical
@@ -342,7 +342,7 @@ premise ^
 }.
 
 R --> 38
-{personality_defect ^ extremely-calculated :: fact_cert ^ 100
+{personality_defect ^ extremely_calculated :: fact_cert ^ 100
 premise ^
 	{
 	 negative :==: cynical
@@ -358,7 +358,7 @@ premise ^
 }.
 
 R --> 40
-{hero ^ soldier76 :: fact_cert ^ 90
+{hero ^ soldier76 :: fact_cert ^ 95
 premise ^
 	{
 	 playerexperience :==: low
@@ -369,7 +369,7 @@ premise ^
 }.
 
 R --> 41
-{hero ^ bastion :: fact_cert ^ 90
+{hero ^ bastion :: fact_cert ^ 93
 premise ^
 	{
 	 playerexperience :==: low
@@ -380,7 +380,7 @@ premise ^
 }.
 
 R --> 42
-{hero ^ lucio :: fact_cert ^ 90
+{hero ^ lucio :: fact_cert ^ 91
 premise ^
 	{
 	 playerexperience :==: low
@@ -401,7 +401,7 @@ premise ^
 	}
 }.
 R --> 44
-{hero ^ soldier76 :: fact_cert ^ 77
+{hero ^ soldier76 :: fact_cert ^ 80
 premise ^
 	{
 	 playerexperience :==: low
@@ -410,7 +410,7 @@ premise ^
 	}
 }.
 R --> 45
-{hero ^ bastion :: fact_cert ^ 77
+{hero ^ bastion :: fact_cert ^ 75
 premise ^
 	{
 	 playerexperience :==: low
@@ -428,7 +428,7 @@ premise ^
 	}
 }.
 R --> 47
-{hero ^ junkrat :: fact_cert ^ 90
+{hero ^ junkrat :: fact_cert ^ 99
 premise ^
 	{
 	 playerexperience :==: medium
@@ -439,18 +439,18 @@ premise ^
 }.
 
 R --> 48
-{hero ^ widowmaker :: fact_cert ^ 90
+{hero ^ widowmaker :: fact_cert ^ 98
 premise ^
 	{
 	 playerexperience :==: medium
 	 &&range :==: long
 	 &&alternateclass :==: sniper
-	 && //meta
+	 &&//meta
 	}
 }.
 
 R --> 49
-{hero ^ tracer :: fact_cert ^ 80 
+{hero ^ tracer :: fact_cert ^ 81
 premise ^
 	{
 	 playerexperience :==: medium
@@ -464,7 +464,7 @@ premise ^
 }.
 
 R --> 50
-{hero ^ tracer :: fact_cert ^ 80
+{hero ^ tracer :: fact_cert ^ 84
 premise ^
 	{
 	 playerexperience :==: medium
@@ -506,7 +506,7 @@ premise ^
 }.
 
 R --> 53
-{hero ^ winston :: fact_cert ^ 90
+{hero ^ winston :: fact_cert ^ 95
 premise ^
 	{
 	 playerexperience :==: medium
@@ -528,13 +528,13 @@ premise ^
 	 &&waytoplay :==: defense
 	 &&class :==: defensive
 	 &&//meta
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	 &&color :==: red
 	}
 }.
 
 R --> 55
-{hero ^ winston :: fact_cert ^ 65 
+{hero ^ winston :: fact_cert ^ 70
 premise ^
 	{
 	 playerexperience :==: medium
@@ -568,7 +568,7 @@ premise ^
 }.
 
 R --> 58
-{hero ^ symmetra :: fact_cert ^ 90
+{hero ^ symmetra :: fact_cert ^ 85
 premise ^
 	{
 	 playerexperience :==: medium
@@ -576,7 +576,7 @@ premise ^
 	 &&waytoplay :==: backer
 	 &&class :==: support
 	 &&//meta
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	 &&color :==: blue
 	}
 }.
@@ -604,7 +604,7 @@ premise ^
 	 &&waytoplay :==: backer
 	 &&class :==: support
 	 &&meta
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	 &&color :==: yellow
 	}
 }.
@@ -618,7 +618,7 @@ premise ^
 	 &&waytoplay :==: attack
 	 &&class :==: offensive
 	 &&//meta
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	 &&color :==: purple
 	}
 }.
@@ -666,7 +666,7 @@ premise ^
 }.
 
 R --> 65
-{hero ^ ana :: fact_cert ^ 90
+{hero ^ ana :: fact_cert ^ 80
 premise ^
 	{
 	 playerexperience :==: high
@@ -674,7 +674,7 @@ premise ^
 	 &&waytoplay :==: backer
 	 &&class :==: support
 	 &&meta
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	 &&color :==: blue
 	}
 }.
@@ -685,16 +685,16 @@ premise ^
 	{
 	 waytoplay :==: backer
 	 &&class :==: support
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	}
 }.
 R --> 67
-{hero ^ ana :: fact_cert ^ 60
+{hero ^ ana :: fact_cert ^ 61
 premise ^
 	{
 	 waytoplay :==: backer
 	 &&class :==: support
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	}
 }.
 
@@ -707,13 +707,13 @@ premise ^
 	 &&waytoplay :==: attack
 	 &&class :==: offensive
 	 &&meta
-	 &&personality_defect :==: extremely-calculated
+	 &&personality_defect :==: extremely_calculated
 	 &&color :==: white
 	}
 }.
 
 R --> 69
-{hero ^ mei :: fact_cert ^ 90
+{hero ^ mei :: fact_cert ^ 94
 premise ^
 	{
 	 playerexperience :==: medium
@@ -727,7 +727,7 @@ premise ^
 }.
 
 R --> 70
-{hero ^ mei :: fact_cert ^ 90
+{hero ^ mei :: fact_cert ^ 93
 premise ^
 	{
 	 playerexperience :==: medium
@@ -741,7 +741,7 @@ premise ^
 }.
 
 R --> 71
-{hero ^ hanzo :: fact_cert ^ 90  
+{hero ^ hanzo :: fact_cert ^ 92
 premise ^
 	{
 	 playerexperience :==: high
@@ -755,7 +755,7 @@ premise ^
 }.
 
 R --> 72
-{hero ^ hanzo :: fact_cert ^ 90
+{hero ^ hanzo :: fact_cert ^ 91
 premise ^
 	{
 	 playerexperience :==: high
@@ -769,7 +769,7 @@ premise ^
 }.
 
 R --> 73
-{hero ^ tracer :: fact_cert ^ 60 
+{hero ^ tracer :: fact_cert ^ 64
 premise ^
 	{
 	 color :==: orange
@@ -779,7 +779,7 @@ premise ^
 }.
 
 R --> 74
-{hero ^ tracer :: fact_cert ^ 65
+{hero ^ tracer :: fact_cert ^ 66
 premise ^
 	{
 	 range :==: medium
@@ -801,7 +801,7 @@ opt{
 close | medium | long
 }.
 
-intrebare --> playexperience
+intrebare --> playerexperience
 text ^ 'Cata experienta ai cu acest joc?'
 opt{
 low | medium | high
@@ -810,7 +810,7 @@ low | medium | high
 intrebare --> role
 text ^ 'Ce rol vrei sa ai?'
 opt{
-dps | protector | assisting_players | attract_atention
+dps | protection | assisting_teammates | attract_atention
 }.
 
 intrebare --> playmode
@@ -834,7 +834,7 @@ intuitive | stoic | logical | selfless | precise | crafty | observant
 intrebare --> quality
 text ^ 'Ce calitate ai?'
 opt{
-energetic | prudent | anticipative | organized | protective | helpful | reflective | rational 
+energetic | prudent | anticipative | organized | protective | helpful | reflective | rational | aggressive
 }.
 
 intrebare --> attribute
@@ -846,13 +846,13 @@ tanking_damage | evading_damage | healing_damage | protecting_others | assisting
 intrebare --> negative
 text ^ 'Care este un atribut negativ de al tau?'
 opt{
-impatient | ruthless | rude | unpredictable | harsh | naughty | gullible | sneaky | overcritical | cynical | emotional | extremely-calculated
+impatient | ruthless | rude | unpredictable | harsh | naughty | gullible | sneaky | overcritical | cynical 
 }.
 
 intrebare --> color
 text ^ 'Care este culoarea ta preferata?'
 opt{
-blue | brown | red | white | green | orange | pink | black | purple  
+blue | brown | red | white | green | orange | pink | black | purple | yellow
 }.
 
 intrebare --> hair
@@ -864,6 +864,6 @@ yellow | blue | brown | red | white | green | orange | pink | black | purple | n
 intrebare --> costume
 text ^ 'Care este culoarea costumului?'
 opt{
-blue | brown | red | white | green | orange | pink | black | purple  
+blue | brown | red | white | green | orange | pink | black | purple | yellow 
 }.
 
