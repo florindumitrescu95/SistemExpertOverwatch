@@ -5,6 +5,7 @@
  */
 package exempluinterfataprolog;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PipedOutputStream;
@@ -16,8 +17,22 @@ import java.net.Socket;
  *
  * @author Irina
  */
+
 public class ConexiuneProlog {
-    final String caleExecutabilSicstus="C:\\Users\\Florin\\Desktop\\SICStus Prolog 4.0.2\\bin\\spwin.exe";
+    final String caleMandea = "C:\\Program Files (x86)\\SICStus Prolog VC14 4.3.5\\spwin.exe";
+    final String caleDumitrescu = "C:\\Users\\Florin\\Desktop\\SICStus Prolog 4.0.2\\bin\\spwin.exe";
+    
+    private String ChoosePath(){
+        boolean f = new File(caleDumitrescu).exists();
+        String geani;
+        if (f)
+            geani = caleDumitrescu;
+        else geani = caleMandea;
+        return geani;
+    }
+    
+    
+    final String caleExecutabilSicstus = ChoosePath();
     final String nume_fisier="sistem_expert_alex.pl";
     //final String nume_fisier="ceva_simplu.pl";    
     final String scop="pornire.";    
@@ -29,12 +44,13 @@ public class ConexiuneProlog {
     Fereastra fereastra;
     int port;
     
-    
+
     public Fereastra getFereastra(){
         return fereastra;
     }
     
     public ConexiuneProlog(int _port, Fereastra _fereastra) throws IOException, InterruptedException{
+        
         InputStream processIs, processStreamErr;
         port=_port;
         fereastra=_fereastra;
