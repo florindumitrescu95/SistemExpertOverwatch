@@ -35,7 +35,7 @@ public class ConexiuneProlog {
     final String caleExecutabilSicstus = ChoosePath();
     final String nume_fisier="sistem_expert_alex.pl";
     //final String nume_fisier="ceva_simplu.pl";    
-    final String scop="pornire.";    
+    final String scop="inceput.";    
     //final String scop="main.";
 
     Process procesSicstus;

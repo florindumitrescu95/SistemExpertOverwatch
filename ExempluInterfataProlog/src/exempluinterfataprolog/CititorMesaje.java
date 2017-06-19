@@ -82,7 +82,7 @@ public class CititorMesaje extends Thread {
                     str="";
                     SwingUtilities.invokeLater(new Runnable() {
                         public void run(){ 
-                            conexiune.getFereastra().getDebugTextArea().append("penis"); 
+                            conexiune.getFereastra().getDebugTextArea().append(sirDeScris); 
                         }
 
                     });

@@ -1,3 +1,4 @@
+:-use_module(library(sockets)).
 :-use_module(library(lists)).
 :-use_module(library(system)).
 :-use_module(library(file_systems)).
