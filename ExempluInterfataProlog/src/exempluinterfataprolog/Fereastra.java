@@ -141,13 +141,12 @@ public class Fereastra extends javax.swing.JFrame {
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
         //okButton.setEnabled(false);
-        String valoareParametru = okButton.getText();
         
         String valoareparam = "OverwatchReguli.txt";
         String dir=System.getProperty("user.dir").replace("\\", "/");
         try {
             conexiune.expeditor.trimiteMesajSicstus("director('"+dir+"')");
-            conexiune.expeditor.trimiteMesajSicstus("incarca("+valoareParametru+")");
+            conexiune.expeditor.trimiteMesajSicstus("incarca('"+valoareparam+"')");
         } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
