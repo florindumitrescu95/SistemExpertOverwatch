@@ -751,7 +751,7 @@ proceseaza_text_primit(Stream,C):-
 				write(CevaCitit),nl,
 				proceseaza_termen_citit(Stream,CevaCitit,C).
 				
-proceseaza_termen_citit(Stream,salut,C):-
+proceseaza_termen_citit(Stream,'salut',C):-
 				write(Stream,'salut, bre!\n'),
 				flush_output(Stream),
 				C1 is C+1,
