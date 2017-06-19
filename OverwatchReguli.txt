@@ -264,7 +264,7 @@ R --> 28
 premise ^
 	{
 	 playmode :==: giving_support
-	 &&attribute :==: assisting_teammates
+	 &&attribute :==: give_support
 	}
 }.
 
@@ -840,7 +840,7 @@ energetic | prudent | anticipative | organized | protective | helpful | reflecti
 intrebare --> attribute
 text ^ 'Care dintre atribute le ai?'
 opt{
-tanking_damage | evading_damage | healing_damage | protecting_others | assisting_teammates 
+tanking_damage | evading_damage | healing_damage | protecting_others | give_support 
 }.
 
 intrebare --> negative
