@@ -97,7 +97,7 @@ public class CititorMesaje extends Thread {
                                 conexiune.getFereastra().seteazaRaspunsuri(text);             
                             }
                             //verific daca e solutie
-                            if(text.length()>2 && text.charAt(0)=='s'&& text.charAt(1)=='(' && text.charAt(text.length()-1)==')')
+                            if(text.length()>2 && text.charAt(0)=='s' && text.charAt(1)=='(' && text.charAt(text.length()-1)==')')
                             {
                                 String intrebare=text.substring(2, text.length()-1);
                                 conexiune.getFereastra().setSolutie(intrebare);

@@ -251,7 +251,7 @@ public class Fereastra extends javax.swing.JFrame {
     }
     public void optiuneOK(java.awt.event.ActionEvent evt){
         
-        String raspuns=(String) patternList.getSelectedItem();
+        String raspuns= ((JButton)(evt.getSource())).getText();
         try {
             conexiune.expeditor.trimiteSirSicstus(raspuns);
             
@@ -287,19 +287,16 @@ public class Fereastra extends javax.swing.JFrame {
         
         String[] optiuniVector = optiuni.split(" ");
         
-        patternList = new JComboBox(optiuniVector);
-        patternList.setEditable(true);
-        int index= (int)(Math.random() * optiuniVector.length);
-        patternList.setSelectedItem(optiuniVector[index]);
-        
-       
-        okButton.addActionListener(new java.awt.event.ActionListener() {
+        for(int i=0;i<optiuniVector.length;i++)
+        {
+            JButton b=new JButton(optiuniVector[i]);
+            b.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     optiuneOK(evt);
                 }
             });
-        this.panou_intrebari.jPanel1.add(patternList);
-        this.panou_intrebari.jPanel1.add(okButton);
+            this.panou_intrebari.jPanel1.add(b);
+        }
         
         this.panou_intrebari.jPanel1.repaint();
         this.panou_intrebari.jPanel1.revalidate();
