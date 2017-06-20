@@ -791,6 +791,13 @@ proceseaza_termen_citit(Stream, comanda(consulta),C):-
 				C1 is C+1,
 				proceseaza_text_primit(Stream,C1).
 				
+proceseaza_termen_citit(Stream, comanda(reinitiaza),C):-
+				write(Stream,'Se realizeaza reinitializarea\n'),
+				flush_output(Stream),
+				executa([reinitiaza]),
+				C1 is C+1,
+				proceseaza_text_primit(Stream,C1).
+				
 proceseaza_termen_citit(Stream, X, _):- % cand vrem sa-i spunem "Pa"
 				(X == end_of_file ; X == exit),
 				write(gata),nl,
