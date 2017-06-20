@@ -5,12 +5,17 @@
  */
 package exempluinterfataprolog;
 
+import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 /**
  *
@@ -27,7 +32,7 @@ public class Fereastra extends javax.swing.JFrame {
     public Fereastra(String titlu) {
         super(titlu);
         initComponents();
-        
+        panou_intrebari = new panou_intrebare();       
     }
 
     /**
@@ -62,7 +67,7 @@ public class Fereastra extends javax.swing.JFrame {
         textAreaDebug.setRows(5);
         jScrollPane1.setViewportView(textAreaDebug);
 
-        jButton1.setText("Consulta");
+        jButton1.setText("START");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -102,38 +107,36 @@ public class Fereastra extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(okButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(140, 140, 140)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
-                .addContainerGap())
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(okButton)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(okButton)
-                    .addComponent(jButton1)
                     .addComponent(jButton4)
                     .addComponent(jButton2)
                     .addComponent(jButton5)
                     .addComponent(jButton3))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -162,18 +165,28 @@ public class Fereastra extends javax.swing.JFrame {
         } catch (InterruptedException ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-        String valoareParametru = jButton1.getText(); 
+        
+        this.jButton1.setVisible(false);
+        this.setLayout(new FlowLayout());
+        this.add(this.panou_intrebari);
+        this.panou_intrebari.paint(null);
+        this.panou_intrebari.revalidate();
+        this.repaint();
+        this.revalidate();
         try {
-            conexiune.expeditor.trimiteMesajSicstus(valoareParametru);
+            conexiune.expeditor.trimiteMesajSicstus("comanda(consulta)");
+            
         } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String valoareParametru = jButton2.getText(); 
+        
+        
         try {
-            conexiune.expeditor.trimiteMesajSicstus(valoareParametru);
+            conexiune.expeditor.trimiteMesajSicstus("comanda(reinitiaza)");
         } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -240,7 +253,17 @@ public class Fereastra extends javax.swing.JFrame {
             }
         });
     }
-
+    public void optiuneOkButtonActionPerformed2(java.awt.event.ActionEvent evt){
+        String raspuns=(String) patternList.getSelectedItem();
+        try {
+            conexiune.expeditor.trimiteSirSicstus(raspuns);
+            
+        
+        } catch (Exception ex) {
+            Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     public javax.swing.JTextArea getDebugTextArea(){
         return textAreaDebug;
     }
@@ -250,9 +273,64 @@ public class Fereastra extends javax.swing.JFrame {
         conexiune=_conexiune;
     }
     
+    public void seteazaIntrebare(String intrebare)
+    {
+        this.panou_intrebari.jLabel1.setText(intrebare);
+        this.panou_intrebari.repaint();
+    }
     
+    public void seteazaRaspunsuri(String optiuni)
+    {
+        
+        this.panou_intrebari.jPanel1.removeAll();
+        this.panou_intrebari.jPanel1.setLayout(new FlowLayout());
+        
+        optiuni = optiuni.trim();
+        optiuni = optiuni.substring(1,optiuni.length()-1);
+        optiuni = optiuni.trim();
+        
+        String[] optiuniVector = optiuni.split(" ");
+        
+        patternList = new JComboBox(optiuniVector);
+        patternList.setEditable(true);
+        int index= (int)(Math.random() * optiuniVector.length);
+        patternList.setSelectedItem(optiuniVector[index]);
+        
+       
+       okButton2.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    optiuneOkButtonActionPerformed2(evt);
+                }
+            });
+       this.panou_intrebari.jPanel1.add(patternList);
+       this.panou_intrebari.jPanel1.add(okButton2);
+        
+       this.panou_intrebari.jPanel1.repaint();
+       this.panou_intrebari.jPanel1.revalidate();
+    }
+    
+    public void setSolutie(String raspuns){
+        if(!Fereastra.AFISAT_SOLUTII)
+        {
+            this.panou_intrebari.removeAll();
+            this.panou_intrebari.setLayout(new BoxLayout(this.panou_intrebari, BoxLayout.PAGE_AXIS));
+            Fereastra.AFISAT_SOLUTII=true;
+        }
+        raspuns=raspuns.trim();
+        raspuns=raspuns.substring(2,raspuns.length()-1);
+        raspuns=raspuns.trim();
+        JLabel jsol=new JLabel(raspuns);
+        this.panou_intrebari.add(jsol);
+        
+       
 
+        this.panou_intrebari.repaint();
+        this.panou_intrebari.revalidate();
+    }
     
+    public static boolean AFISAT_SOLUTII=false;
+    private JComboBox patternList;
+    JButton okButton2 = new JButton("OK");
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup grupBtn;
     private javax.swing.JButton jButton1;
