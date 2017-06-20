@@ -196,6 +196,7 @@ scopuri_princ:- creare_director, afiseaza_demonstratii.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 scopuri_princ(Stream) :-
 scop(Atr),determina(Stream,Atr), afiseaza_scop(Stream,Atr),fail.
+scopuri_princ(Stream) :- creare_director, afiseaza_demonstratii.
 
 scopuri_princ(_).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -746,7 +747,7 @@ inceput:-format('Salutare\n',[]),	flush_output,
 				
 proceseaza_text_primit(Stream,C):-
 				write(inainte_de_citire),
-				read(Stream,CevaCitit),
+				read(Stream,CevaCitit), 
 				write(dupa_citire),
 				write(CevaCitit),nl,
 				proceseaza_termen_citit(Stream,CevaCitit,C).
@@ -788,6 +789,13 @@ proceseaza_termen_citit(Stream, comanda(consulta),C):-
 				write(Stream,'Se incepe consultarea\n'),
 				flush_output(Stream),
 				scopuri_princ(Stream),
+				C1 is C+1,
+				proceseaza_text_primit(Stream,C1).
+				
+proceseaza_termen_citit(Stream, comanda(reinitiaza),C):-
+				write(Stream,'Se realizeaza reinitializarea\n'),
+				flush_output(Stream),
+				executa([reinitiaza]),
 				C1 is C+1,
 				proceseaza_text_primit(Stream,C1).
 				
