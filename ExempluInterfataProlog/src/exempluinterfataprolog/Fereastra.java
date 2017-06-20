@@ -45,7 +45,7 @@ public class Fereastra extends javax.swing.JFrame {
     private void initComponents() {
 
         grupBtn = new javax.swing.ButtonGroup();
-        okButton = new javax.swing.JButton();
+        incarcaButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaDebug = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -56,10 +56,10 @@ public class Fereastra extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        okButton.setText("Incarca");
-        okButton.addActionListener(new java.awt.event.ActionListener() {
+        incarcaButton.setText("Incarca");
+        incarcaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                okButtonActionPerformed(evt);
+                incarcaButtonActionPerformed(evt);
             }
         });
 
@@ -113,7 +113,7 @@ public class Fereastra extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(okButton)
+                .addComponent(incarcaButton)
                 .addGap(18, 18, 18)
                 .addComponent(jButton4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -127,7 +127,7 @@ public class Fereastra extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(okButton)
+                    .addComponent(incarcaButton)
                     .addComponent(jButton4)
                     .addComponent(jButton2)
                     .addComponent(jButton5)
@@ -142,8 +142,9 @@ public class Fereastra extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
+    private void incarcaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incarcaButtonActionPerformed
         //okButton.setEnabled(false);
+        Fereastra.AFISAT_SOLUTII=false;
         
         String valoareparam = "OverwatchReguli.txt";
         String dir=System.getProperty("user.dir").replace("\\", "/");
@@ -153,19 +154,10 @@ public class Fereastra extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_okButtonActionPerformed
+    }//GEN-LAST:event_incarcaButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      /*  try {
-            // TODO add your handling code here:
-            PipedOutputStream pos= conexiune.expeditor.getPipedOutputStream();
-            PrintStream ps=new PrintStream(pos);
-            ps.println("salut.");
-            ps.flush();
-        } catch (InterruptedException ex) {
-            Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-        
+
         this.jButton1.setVisible(false);
         this.setLayout(new FlowLayout());
         this.add(this.panou_intrebari);
@@ -185,11 +177,15 @@ public class Fereastra extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         
-        try {
-            conexiune.expeditor.trimiteMesajSicstus("comanda(reinitiaza)");
-        } catch (Exception ex) {
+        /*  try {
+            // TODO add your handling code here:
+            PipedOutputStream pos= conexiune.expeditor.getPipedOutputStream();
+            PrintStream ps=new PrintStream(pos);
+            ps.println("salut.");
+            ps.flush();
+        } catch (InterruptedException ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -253,7 +249,8 @@ public class Fereastra extends javax.swing.JFrame {
             }
         });
     }
-    public void optiuneOkButtonActionPerformed2(java.awt.event.ActionEvent evt){
+    public void optiuneOK(java.awt.event.ActionEvent evt){
+        
         String raspuns=(String) patternList.getSelectedItem();
         try {
             conexiune.expeditor.trimiteSirSicstus(raspuns);
@@ -281,7 +278,6 @@ public class Fereastra extends javax.swing.JFrame {
     
     public void seteazaRaspunsuri(String optiuni)
     {
-        
         this.panou_intrebari.jPanel1.removeAll();
         this.panou_intrebari.jPanel1.setLayout(new FlowLayout());
         
@@ -297,16 +293,16 @@ public class Fereastra extends javax.swing.JFrame {
         patternList.setSelectedItem(optiuniVector[index]);
         
        
-       okButton2.addActionListener(new java.awt.event.ActionListener() {
+        okButton.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    optiuneOkButtonActionPerformed2(evt);
+                    optiuneOK(evt);
                 }
             });
-       this.panou_intrebari.jPanel1.add(patternList);
-       this.panou_intrebari.jPanel1.add(okButton2);
+        this.panou_intrebari.jPanel1.add(patternList);
+        this.panou_intrebari.jPanel1.add(okButton);
         
-       this.panou_intrebari.jPanel1.repaint();
-       this.panou_intrebari.jPanel1.revalidate();
+        this.panou_intrebari.jPanel1.repaint();
+        this.panou_intrebari.jPanel1.revalidate();
     }
     
     public void setSolutie(String raspuns){
@@ -330,16 +326,16 @@ public class Fereastra extends javax.swing.JFrame {
     
     public static boolean AFISAT_SOLUTII=false;
     private JComboBox patternList;
-    JButton okButton2 = new JButton("OK");
+    JButton okButton = new JButton("OK");
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup grupBtn;
+    private javax.swing.JButton incarcaButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton okButton;
     private javax.swing.JTextArea textAreaDebug;
     // End of variables declaration//GEN-END:variables
 }
