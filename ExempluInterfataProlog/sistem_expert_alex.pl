@@ -747,7 +747,7 @@ inceput:-format('Salutare\n',[]),	flush_output,
 				
 proceseaza_text_primit(Stream,C):-
 				write(inainte_de_citire),
-				read(Stream,CevaCitit),
+				read(Stream,CevaCitit), 
 				write(dupa_citire),
 				write(CevaCitit),nl,
 				proceseaza_termen_citit(Stream,CevaCitit,C).
