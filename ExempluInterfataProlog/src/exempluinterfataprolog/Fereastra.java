@@ -55,6 +55,7 @@ public class Fereastra extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 400));
 
         incarcaButton.setText("Incarca");
         incarcaButton.addActionListener(new java.awt.event.ActionListener() {

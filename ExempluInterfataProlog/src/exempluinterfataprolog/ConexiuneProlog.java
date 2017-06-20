@@ -19,7 +19,7 @@ import java.net.Socket;
  */
 
 public class ConexiuneProlog {
-    final String caleMandea = "C:\\Program Files (x86)\\SICStus Prolog VC14 4.3.5\\spwin.exe";
+    final String caleMandea = "C:\\Program Files (x86)\\SICStus Prolog VC14 4.3.5\\bin\\spwin.exe";
     final String caleDumitrescu = "C:\\Users\\Florin\\Desktop\\SICStus Prolog 4.0.2\\bin\\spwin.exe";
     
     private String ChoosePath(){
