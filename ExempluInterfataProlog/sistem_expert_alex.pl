@@ -196,6 +196,7 @@ scopuri_princ:- creare_director, afiseaza_demonstratii.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 scopuri_princ(Stream) :-
 scop(Atr),determina(Stream,Atr), afiseaza_scop(Stream,Atr),fail.
+scopuri_princ(Stream) :- creare_director, afiseaza_demonstratii.
 
 scopuri_princ(_).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
