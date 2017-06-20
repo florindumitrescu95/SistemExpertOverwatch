@@ -1,0 +1,24 @@
+hero : = = : winston a fost derivat cu ajutorul regulilor:  55 
+
+R - - > 55 
+ { 
+    hero ^ winston : : fact_cert ^ 70 
+
+
+ premise  ^  
+ { 
+     playerexperience : = = : medium 
+& & 
+     range : = = : close 
+& & 
+     / / meta 
+& & 
+} 
+ } 
+
+playerexperience : = = : medium a fost derivat cu ajutorul regulilor:  utiliz 
+
+range : = = : close a fost derivat cu ajutorul regulilor:  utiliz 
+
+/ / meta a fost derivat cu ajutorul regulilor:  utiliz 
+

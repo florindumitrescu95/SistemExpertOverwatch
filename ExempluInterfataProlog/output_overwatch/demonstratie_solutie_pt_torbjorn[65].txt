@@ -1,0 +1,24 @@
+hero : = = : torbjorn a fost derivat cu ajutorul regulilor:  56 
+
+R - - > 56 
+ { 
+    hero ^ torbjorn : : fact_cert ^ 65 
+
+
+ premise  ^  
+ { 
+     playerexperience : = = : medium 
+& & 
+     range : = = : close 
+& & 
+     / / meta 
+& & 
+} 
+ } 
+
+playerexperience : = = : medium a fost derivat cu ajutorul regulilor:  utiliz 
+
+range : = = : close a fost derivat cu ajutorul regulilor:  utiliz 
+
+/ / meta a fost derivat cu ajutorul regulilor:  utiliz 
+

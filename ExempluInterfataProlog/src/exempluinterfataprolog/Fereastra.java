@@ -55,7 +55,7 @@ public class Fereastra extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 500));
+        setPreferredSize(new java.awt.Dimension(1000, 500));
 
         incarcaButton.setText("Incarca");
         incarcaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -191,12 +191,13 @@ public class Fereastra extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        String valoareParametru = jButton4.getText(); 
-        try {
-            conexiune.expeditor.trimiteMesajSicstus(valoareParametru);
-        } catch (Exception ex) {
-            Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       if(Fereastra.AFISAT_SOLUTII){
+            try {
+                conexiune.expeditor.trimiteMesajSicstus("comanda(cum)");
+            } catch (Exception ex) {
+                Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
+            }
+       }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -209,9 +210,9 @@ public class Fereastra extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String valoareParametru = jButton3.getText(); 
+        
         try {
-            conexiune.expeditor.trimiteMesajSicstus(valoareParametru);
+            conexiune.expeditor.trimiteMesajSicstus("comanda(afis_fapte)");
         } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
