@@ -55,6 +55,13 @@ public class ExpeditorMesaje extends Thread{
         ps.flush();
     }
     
+    public void trimiteSirSicstus(String mesaj) throws Exception{
+        PipedOutputStream pos= getPipedOutputStream();
+        PrintStream ps=new PrintStream(pos);
+        ps.println(mesaj);
+        ps.flush();
+    }
+    
     public void run(){
         try {
             s=cm.getSocket();

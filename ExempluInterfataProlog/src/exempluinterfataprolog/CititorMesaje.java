@@ -82,7 +82,26 @@ public class CititorMesaje extends Thread {
                     str="";
                     SwingUtilities.invokeLater(new Runnable() {
                         public void run(){ 
-                            conexiune.getFereastra().getDebugTextArea().append(sirDeScris); 
+                            conexiune.getFereastra().getDebugTextArea().append(sirDeScris);
+                            
+                            String text=sirDeScris.trim();
+                            //verific daca e intrebare
+                            if(text.charAt(0)=='i')
+                            {
+                                String intrebare=text.substring(2, text.length()-1);
+                                conexiune.getFereastra().seteazaIntrebare(intrebare);
+                            }
+                            else if(text.charAt(0)=='s')
+                            {
+                               // String intrebare=text.substring(2, text.length()-1);
+                                conexiune.getFereastra().setSolutie(text);
+                            }
+                            else
+                            {
+                                conexiune.getFereastra().seteazaRaspunsuri(text);             
+                            }
+                            
+                            
                         }
 
                     });
