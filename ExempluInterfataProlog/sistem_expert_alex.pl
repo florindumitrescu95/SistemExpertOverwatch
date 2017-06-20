@@ -800,13 +800,13 @@ proceseaza_termen_citit(Stream, comanda(reinitiaza),C):-
 				proceseaza_text_primit(Stream,C1).
 
 proceseaza_termen_citit(Stream, comanda(cum),C):-
-				write(Stream,'Se realizeaza reinitializarea\n'),
+				write(Stream,'Se afiseaza cum s-a ajuns la solutie\n'),
 				flush_output(Stream),
 				cum(Stream),
 				C1 is C+1,
 				proceseaza_text_primit(Stream,C1).
 proceseaza_termen_citit(Stream, comanda(afis_fapte),C):-
-				write(Stream,'Se realizeaza reinitializarea\n'),
+				write(Stream,'Se afiseaza premisele pentru solutie\n'),
 				flush_output(Stream),
 				afiseaza_fapte,
 				C1 is C+1,
