@@ -802,7 +802,7 @@ proceseaza_termen_citit(Stream, comanda(reinitiaza),C):-
 proceseaza_termen_citit(Stream, comanda(cum),C):-
 				write(Stream,'Se afiseaza cum s-a ajuns la solutie\n'),
 				flush_output(Stream),
-				cum(Stream),
+				cum([]),
 				C1 is C+1,
 				proceseaza_text_primit(Stream,C1).
 proceseaza_termen_citit(Stream, comanda(afis_fapte),C):-
