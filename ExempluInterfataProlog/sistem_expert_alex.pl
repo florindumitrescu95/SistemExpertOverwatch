@@ -11,10 +11,6 @@
 :-dynamic intrebare_curenta/3.
 
 
-close_all:-current_stream(_,_,S),close(S),fail;true.
-
-curata_bc:-current_predicate(P), abolish(P,[force(true)]), fail;true.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 tab(Stream,N):-N>0,write(Stream,' '),N1 is N-1, tab(Stream,N1).
 tab(_,0).
@@ -28,7 +24,7 @@ scrie_lista([H|T]) :-
 write(H), tab(1),
 scrie_lista(T).
              
-			 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %aici
 scrie_lista(Stream,[]):-nl(Stream),flush_output(Stream).
 
@@ -192,7 +188,11 @@ tell(Vechi).
 
 scopuri_princ :-
 scop(Atr),determina(Atr), afiseaza_scop(Atr),fail.
-scopuri_princ:- creare_director, afiseaza_demonstratii.
+scopuri_princ :- scop(Atr),Scop = av(Atr,_),
+				 if(setof(st(FC,Scop), Istoric ^ fapt(Scop,FC,Istoric),LF),
+				 (creare_director, afiseaza_demonstratii),
+				 (write('Nu exista solutii'),nl)).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 scopuri_princ(Stream) :-
 scop(Atr),determina(Stream,Atr), afiseaza_scop(Stream,Atr),fail.
@@ -250,7 +250,7 @@ fg(Scop,FC_curent,Istorie).
 	fapt(av(Atr,'nu_conteaza'),FC,_), !.	
 realizare_scop(Stream,not Scop,Not_FC,Istorie) :-
 realizare_scop(Stream,Scop,FC,Istorie),
-Not_FC is - FC, !.
+Not_FC is - FC, !.	
 
 realizare_scop(_,Scop,FC,_) :-
 fapt(Scop,FC,_), !.
@@ -404,7 +404,7 @@ de_la_utiliz(Stream,X,Istorie,Lista_opt) :-
 	proceseaza_raspuns(X,Istorie,Lista_opt), write('gata de la utiliz\n').
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-proceseaza_raspuns([de_ce],Istorie,_) :-                         nl,afis_istorie(Istorie),!,fail.
+proceseaza_raspuns([de_ce],Istorie,_) :- nl,afis_istorie(Istorie),!,fail.
 
 proceseaza_raspuns([X],_,Lista_opt):-
 member(X,Lista_opt).
@@ -792,8 +792,8 @@ proceseaza_termen_citit(Stream, comanda(consulta),C):-
 				C1 is C+1,
 				proceseaza_text_primit(Stream,C1).
 				
-proceseaza_termen_citit(Stream, comanda(reinitiaza),C):-
-				write(Stream,'Se realizeaza reinitializarea\n'),
+proceseaza_termen_citit(Stream,comanda(reinitiaza),C):-
+				write(Stream,'se reinitiaza consultarea  \n'),
 				flush_output(Stream),
 				executa([reinitiaza]),
 				C1 is C+1,
@@ -802,7 +802,7 @@ proceseaza_termen_citit(Stream, comanda(reinitiaza),C):-
 proceseaza_termen_citit(Stream, comanda(cum),C):-
 				write(Stream,'Se afiseaza cum s-a ajuns la solutie\n'),
 				flush_output(Stream),
-				cum([]),
+				cum(Stream),
 				C1 is C+1,
 				proceseaza_text_primit(Stream,C1).
 proceseaza_termen_citit(Stream, comanda(afis_fapte),C):-
