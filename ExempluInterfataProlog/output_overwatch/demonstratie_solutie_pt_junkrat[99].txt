@@ -1,0 +1,42 @@
+hero : = = : junkrat a fost derivat cu ajutorul regulilor:  47 
+
+R - - > 47 
+ { 
+    hero ^ junkrat : : fact_cert ^ 99 
+
+
+ premise  ^  
+ { 
+     playerexperience : = = : medium 
+& & 
+     range : = = : close 
+& & 
+     alternateclass : = = : trapper 
+& & 
+     meta 
+& & 
+} 
+ } 
+
+playerexperience : = = : medium a fost derivat cu ajutorul regulilor:  utiliz 
+
+range : = = : close a fost derivat cu ajutorul regulilor:  utiliz 
+
+alternateclass : = = : trapper a fost derivat cu ajutorul regulilor:  1 
+
+R - - > 1 
+ { 
+    alternateclass ^ trapper : : fact_cert ^ 100 
+
+
+ premise  ^  
+ { 
+     playmode : = = : putting_traps 
+& & 
+} 
+ } 
+
+playmode : = = : putting_traps a fost derivat cu ajutorul regulilor:  utiliz 
+
+meta a fost derivat cu ajutorul regulilor:  utiliz 
+

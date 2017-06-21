@@ -175,7 +175,7 @@ public class Fereastra extends javax.swing.JFrame {
         
         
         try {
-            conexiune.expeditor.trimiteSirSicstus("reinitiaza");
+            conexiune.expeditor.trimiteSirSicstus("comanda(reinitiaza)");
             
             
         } catch (Exception ex) {
@@ -184,38 +184,7 @@ public class Fereastra extends javax.swing.JFrame {
     }//GEN-LAST:event_reinitiazaButtonActionPerformed
 
     private void cumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cumButtonActionPerformed
-       String s = (String)JOptionPane.showInputDialog(
-                    this,
-                    "Introduceti scopul:\n",
-                    "Customized Dialog",
-                    JOptionPane.PLAIN_MESSAGE,
-                    null,
-                    null,
-                    "");
-
-        if ((s != null) && (s.length() > 0)) {
-           String cale = "output_overwatch";
-           Fi = new File(cale);
-           File[] listaFisiere = Fi.listFiles();
-
-           if(listaFisiere != null)
-            for(int i =0;i<listaFisiere.length;i++)
-            {
-                String numeFisier = listaFisiere[i].getName();
-                if(numeFisier.toLowerCase().contains(s.toLowerCase())){ 
-                    Fi = new File(cale + "/" + listaFisiere[i].getName());
-                    try {
-                        Desktop.getDesktop().open(Fi);
-                    } catch (IOException ex) {
-                        Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);}
-                    break;
-                }
-            }
-            else 
-                    JOptionPane.showMessageDialog(null, "No solutions boss", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
-
-        }
+       
     }//GEN-LAST:event_cumButtonActionPerformed
 
     private void buttonIesireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIesireActionPerformed
@@ -223,8 +192,11 @@ public class Fereastra extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonIesireActionPerformed
 
     private void afisare_fapteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afisare_fapteButtonActionPerformed
-        
-        
+        try {
+            conexiune.expeditor.trimiteSirSicstus("comanda(afis_fapte)");
+        } catch (Exception ex) {
+            Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_afisare_fapteButtonActionPerformed
 
     /**
