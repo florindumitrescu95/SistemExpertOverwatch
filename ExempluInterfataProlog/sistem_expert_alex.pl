@@ -186,6 +186,7 @@ told,fail ; true),
 tell(Vechi).
 
 
+
 scopuri_princ :-
 scop(Atr),determina(Atr), afiseaza_scop(Atr),fail.
 scopuri_princ :- scop(Atr),Scop = av(Atr,_),
