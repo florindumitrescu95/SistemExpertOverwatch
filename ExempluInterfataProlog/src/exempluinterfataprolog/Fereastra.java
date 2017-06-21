@@ -5,9 +5,12 @@
  */
 package exempluinterfataprolog;
 
+import java.awt.Desktop;
 import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 import java.io.PipedOutputStream;
 import java.io.PrintStream;
 import java.util.logging.Level;
@@ -16,6 +19,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -48,14 +52,16 @@ public class Fereastra extends javax.swing.JFrame {
         incarcaButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         textAreaDebug = new javax.swing.JTextArea();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        startButton = new javax.swing.JButton();
+        reinitiazaButton = new javax.swing.JButton();
+        afisare_fapteButton = new javax.swing.JButton();
+        cumButton = new javax.swing.JButton();
+        buttonIesire = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 500));
+        getContentPane().setLayout(null);
 
         incarcaButton.setText("Incarca");
         incarcaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,83 +69,65 @@ public class Fereastra extends javax.swing.JFrame {
                 incarcaButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(incarcaButton);
+        incarcaButton.setBounds(30, 100, 100, 23);
 
         textAreaDebug.setColumns(20);
         textAreaDebug.setRows(5);
         jScrollPane1.setViewportView(textAreaDebug);
 
-        jButton1.setText("START");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(20, 260, 200, 120);
+
+        startButton.setText("START");
+        startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                startButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(startButton);
+        startButton.setBounds(470, 200, 90, 23);
 
-        jButton2.setText("Reintiaza");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        reinitiazaButton.setText("Reintiaza");
+        reinitiazaButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                reinitiazaButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(reinitiazaButton);
+        reinitiazaButton.setBounds(30, 190, 120, 23);
 
-        jButton3.setText("Afisare_fapte");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        afisare_fapteButton.setText("Afisare_fapte");
+        afisare_fapteButton.setToolTipText("");
+        afisare_fapteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                afisare_fapteButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(afisare_fapteButton);
+        afisare_fapteButton.setBounds(30, 160, 150, 23);
 
-        jButton4.setText("Cum");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        cumButton.setText("Cum");
+        cumButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                cumButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(cumButton);
+        cumButton.setBounds(30, 130, 80, 23);
 
-        jButton5.setText("Iesire");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        buttonIesire.setText("Iesire");
+        buttonIesire.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                buttonIesireActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonIesire);
+        buttonIesire.setBounds(30, 220, 80, 23);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(incarcaButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(0, 368, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(incarcaButton)
-                    .addComponent(jButton4)
-                    .addComponent(jButton2)
-                    .addComponent(jButton5)
-                    .addComponent(jButton3))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagini/overwatch-reflections.jpg"))); // NOI18N
+        getContentPane().add(background);
+        background.setBounds(-5, 0, 1000, 500);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -158,9 +146,9 @@ public class Fereastra extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_incarcaButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
 
-        this.jButton1.setVisible(false);
+        this.startButton.setVisible(false);
         this.setLayout(new FlowLayout());
         this.add(this.panou_intrebari);
         this.panou_intrebari.paint(null);
@@ -174,49 +162,70 @@ public class Fereastra extends javax.swing.JFrame {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_startButtonActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void reinitiazaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reinitiazaButtonActionPerformed
+        this.getContentPane().removeAll();
+        this.panou_intrebari.removeAll();
+        this.panou_intrebari.revalidate();
+        this.panou_intrebari.repaint();
+            
+        this.panou_intrebari = new panou_intrebare();
+        this.initComponents();
         
         
-        /*  try {
-            // TODO add your handling code here:
-            PipedOutputStream pos= conexiune.expeditor.getPipedOutputStream();
-            PrintStream ps=new PrintStream(pos);
-            ps.println("salut.");
-            ps.flush();
-        } catch (InterruptedException ex) {
+        try {
+            conexiune.expeditor.trimiteSirSicstus("reinitiaza");
+            
+            
+        } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
-        }*/  
-    }//GEN-LAST:event_jButton2ActionPerformed
+        }
+    }//GEN-LAST:event_reinitiazaButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       if(Fereastra.AFISAT_SOLUTII){
-            try {
-                conexiune.expeditor.trimiteMesajSicstus("comanda(cum)");
-            } catch (Exception ex) {
-                Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
+    private void cumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cumButtonActionPerformed
+       String s = (String)JOptionPane.showInputDialog(
+                    this,
+                    "Introduceti scopul:\n",
+                    "Customized Dialog",
+                    JOptionPane.PLAIN_MESSAGE,
+                    null,
+                    null,
+                    "");
+
+        if ((s != null) && (s.length() > 0)) {
+           String cale = "output_overwatch";
+           Fi = new File(cale);
+           File[] listaFisiere = Fi.listFiles();
+
+           if(listaFisiere != null)
+            for(int i =0;i<listaFisiere.length;i++)
+            {
+                String numeFisier = listaFisiere[i].getName();
+                if(numeFisier.toLowerCase().contains(s.toLowerCase())){ 
+                    Fi = new File(cale + "/" + listaFisiere[i].getName());
+                    try {
+                        Desktop.getDesktop().open(Fi);
+                    } catch (IOException ex) {
+                        Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);}
+                    break;
+                }
             }
-       }
-    }//GEN-LAST:event_jButton4ActionPerformed
+            else 
+                    JOptionPane.showMessageDialog(null, "No solutions boss", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        String valoareParametru = jButton5.getText(); 
-        try {
-            conexiune.expeditor.trimiteMesajSicstus(valoareParametru);
-        } catch (Exception ex) {
-            Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_cumButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void buttonIesireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIesireActionPerformed
         
-        try {
-            conexiune.expeditor.trimiteMesajSicstus("comanda(afis_fapte)");
-        } catch (Exception ex) {
-            Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_buttonIesireActionPerformed
+
+    private void afisare_fapteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afisare_fapteButtonActionPerformed
+        
+        
+    }//GEN-LAST:event_afisare_fapteButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -324,18 +333,21 @@ public class Fereastra extends javax.swing.JFrame {
         this.panou_intrebari.revalidate();
     }
     
+    
+    File Fi;
     public static boolean AFISAT_SOLUTII=false;
     private JComboBox patternList;
     JButton okButton = new JButton("OK");
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton afisare_fapteButton;
+    private javax.swing.JLabel background;
+    private javax.swing.JButton buttonIesire;
+    private javax.swing.JButton cumButton;
     private javax.swing.ButtonGroup grupBtn;
     private javax.swing.JButton incarcaButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton reinitiazaButton;
+    private javax.swing.JButton startButton;
     private javax.swing.JTextArea textAreaDebug;
     // End of variables declaration//GEN-END:variables
 }
