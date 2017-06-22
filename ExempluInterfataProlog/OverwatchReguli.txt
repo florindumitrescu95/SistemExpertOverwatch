@@ -19,7 +19,7 @@ premise ^
 
 
 R --> 3
-{typeofplaying ^ damagedealer :: fact_cert ^ 100
+{typeofplaying ^ damagedealer :: fact_cert ^ 90
 premise ^
 	{
 	 personality :==: adventurous
@@ -29,7 +29,7 @@ premise ^
 }.	
 
 R --> 4
-{typeofplaying ^ damagedealer :: fact_cert ^ 100
+{typeofplaying ^ damagedealer :: fact_cert ^ 91
 premise ^
 	{
 	 personality :==: independent
@@ -39,7 +39,7 @@ premise ^
 }.
 
 R --> 5
-{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+{typeofplaying ^ damageabsorber :: fact_cert ^ 86
 premise ^
 	{
 	 personality :==: active
@@ -49,7 +49,7 @@ premise ^
 }.
 
 R --> 6
-{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+{typeofplaying ^ damageabsorber :: fact_cert ^ 89
 premise ^
 	{
 	 personality :==: calm
@@ -59,7 +59,7 @@ premise ^
 }.
 
 R --> 7
-{typeofplaying ^ protector :: fact_cert ^ 100
+{typeofplaying ^ protector :: fact_cert ^ 81
 premise ^
 	{
 	 personality :==: independent
@@ -69,7 +69,7 @@ premise ^
 }.
 
 R --> 8
-{typeofplaying ^ team_helper :: fact_cert ^ 100
+{typeofplaying ^ team_helper :: fact_cert ^ 84
 premise ^
 	{
 	 personality :==: caring
@@ -79,7 +79,7 @@ premise ^
 }.
 
 R --> 9
-{typeofplaying ^ team_helper :: fact_cert ^ 100
+{typeofplaying ^ team_helper :: fact_cert ^ 86
 premise ^
 	{
 	 personality :==: adaptable
@@ -89,7 +89,7 @@ premise ^
 }.
 
 R --> 10
-{typeofplaying ^ damagedealer :: fact_cert ^ 100
+{typeofplaying ^ damagedealer :: fact_cert ^ 88
 premise ^
 	{
 	 personality :==: adventurous
@@ -99,7 +99,7 @@ premise ^
 }.
 
 R --> 11
-{typeofplaying ^ team_helper :: fact_cert ^ 100
+{typeofplaying ^ team_helper :: fact_cert ^ 87
 premise ^
 	{
 	 personality :==: adaptable
@@ -109,7 +109,7 @@ premise ^
 }.
 
 R --> 12
-{typeofplaying ^ damagedealer :: fact_cert ^ 100
+{typeofplaying ^ damagedealer :: fact_cert ^ 83
 premise ^
 	{
 	 personality :==: calculating
@@ -119,7 +119,7 @@ premise ^
 }.
 
 R --> 13
-{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+{typeofplaying ^ damageabsorber :: fact_cert ^ 84
 premise ^
 	{
 	 personality :==: spontaneous
@@ -129,7 +129,7 @@ premise ^
 }.
 
 R --> 14
-{typeofplaying ^ damagedealer :: fact_cert ^ 100
+{typeofplaying ^ damagedealer :: fact_cert ^ 92
 premise ^
 	{
 	 personality :==: independent
@@ -139,7 +139,7 @@ premise ^
 }.
 
 R --> 15
-{typeofplaying ^ damageabsorber :: fact_cert ^ 100
+{typeofplaying ^ damageabsorber :: fact_cert ^ 96
 premise ^
 	{
 	 personality :==: calm
@@ -149,7 +149,7 @@ premise ^
 }.
 
 R --> 16
-{typeofplaying ^ team_helper :: fact_cert ^ 100
+{typeofplaying ^ team_helper :: fact_cert ^ 93
 premise ^
 	{
 	 personality :==: caring
@@ -159,7 +159,7 @@ premise ^
 }.
 
 R --> 17
-{typeofplaying ^ damagedealer :: fact_cert ^ 100
+{typeofplaying ^ damagedealer :: fact_cert ^ 90
 premise ^
 	{
 	 personality :==: calm
@@ -169,7 +169,7 @@ premise ^
 }.
 
 R --> 18
-{typeofplaying ^ protector :: fact_cert ^ 100
+{typeofplaying ^ protector :: fact_cert ^ 90
 premise ^
 	{
 	 personality :==: active
@@ -179,7 +179,7 @@ premise ^
 }.
 
 R --> 19
-{typeofplaying ^ damagedealer :: fact_cert ^ 100
+{typeofplaying ^ damagedealer :: fact_cert ^ 90
 premise ^
 	{
 	 personality :==: calm
@@ -401,7 +401,7 @@ premise ^
 	}
 }.
 R --> 44
-{hero ^ soldier76 :: fact_cert ^ 80
+{hero ^ soldier76 :: fact_cert ^ 75
 premise ^
 	{
 	 playerexperience :==: low
@@ -410,7 +410,7 @@ premise ^
 	}
 }.
 R --> 45
-{hero ^ bastion :: fact_cert ^ 75
+{hero ^ bastion :: fact_cert ^ 77
 premise ^
 	{
 	 playerexperience :==: low
@@ -419,7 +419,7 @@ premise ^
 	}
 }.
 R --> 46
-{hero ^ reinhardt :: fact_cert ^ 77
+{hero ^ reinhardt :: fact_cert ^ 80
 premise ^
 	{
 	 playerexperience :==: low
@@ -506,7 +506,7 @@ premise ^
 }.
 
 R --> 53
-{hero ^ winston :: fact_cert ^ 95
+{hero ^ winston :: fact_cert ^ 90
 premise ^
 	{
 	 playerexperience :==: medium
@@ -520,7 +520,7 @@ premise ^
 }.
 
 R --> 54
-{hero ^ torbjorn :: fact_cert ^ 90
+{hero ^ torbjorn :: fact_cert ^ 95
 premise ^
 	{
 	 playerexperience :==: medium
@@ -534,7 +534,7 @@ premise ^
 }.
 
 R --> 55
-{hero ^ winston :: fact_cert ^ 70
+{hero ^ winston :: fact_cert ^ 65
 premise ^
 	{
 	 playerexperience :==: medium
@@ -544,7 +544,7 @@ premise ^
 }.
 
 R --> 56
-{hero ^ torbjorn :: fact_cert ^ 65
+{hero ^ torbjorn :: fact_cert ^ 70
 premise ^
 	{
 	 playerexperience :==: medium
@@ -782,9 +782,10 @@ R --> 74
 {hero ^ tracer :: fact_cert ^ 66
 premise ^
 	{
-	 range :==: medium
-	 &&meta :==: yes
-	 &&personality_defect :==: emotional
+	playerexperience :==: medium
+	 &&range :==: medium
+	&&role :==: dps
+	&&meta
 	}
 }.
 
