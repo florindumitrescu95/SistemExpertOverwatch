@@ -94,7 +94,11 @@ public class CititorMesaje extends Thread {
                             //verific daca sunt optiuni
                             else if(text.length()>2 && text.charAt(0)=='(' && text.charAt(text.length()-1)==')')
                             {
-                                conexiune.getFereastra().seteazaRaspunsuri(text);             
+                                try {             
+                                    conexiune.getFereastra().seteazaRaspunsuri(text);
+                                } catch (IOException ex) {
+                                    Logger.getLogger(CititorMesaje.class.getName()).log(Level.SEVERE, null, ex);
+                                }
                             }
                             //verific daca e solutie
                             if(text.length()>2 && text.charAt(0)=='s' && text.charAt(1)=='(' && text.charAt(text.length()-1)==')')

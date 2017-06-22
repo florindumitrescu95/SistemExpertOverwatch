@@ -5,21 +5,34 @@
  */
 package exempluinterfataprolog;
 
-import java.awt.Desktop;
+import java.awt.BorderLayout;
+import static java.awt.BorderLayout.CENTER;
+import static java.awt.BorderLayout.EAST;
+import static java.awt.BorderLayout.NORTH;
+import static java.awt.BorderLayout.SOUTH;
+import static java.awt.BorderLayout.WEST;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-import java.io.PipedOutputStream;
-import java.io.PrintStream;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.BoxLayout;
+import javax.imageio.ImageIO;
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
 
 /**
  *
@@ -33,10 +46,12 @@ public class Fereastra extends javax.swing.JFrame {
      */
     ConexiuneProlog conexiune;
     panou_intrebare panou_intrebari;
+    istoric istoric;
     public Fereastra(String titlu) {
         super(titlu);
         initComponents();
-        panou_intrebari = new panou_intrebare();       
+        panou_intrebari = new panou_intrebare();   
+        istoric = new istoric();
     }
 
     /**
@@ -138,6 +153,7 @@ public class Fereastra extends javax.swing.JFrame {
         
         String valoareparam = "OverwatchReguli.txt";
         String dir=System.getProperty("user.dir").replace("\\", "/");
+        
         try {
             conexiune.expeditor.trimiteMesajSicstus("director('"+dir+"')");
             conexiune.expeditor.trimiteMesajSicstus("incarca('"+valoareparam+"')");
@@ -145,7 +161,20 @@ public class Fereastra extends javax.swing.JFrame {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_incarcaButtonActionPerformed
-
+    public void aflaIstoric(java.awt.event.ActionEvent evt){
+        this.istoric.removeAll();
+        this.istoric = new istoric();
+        this.istoric.setVisible(true);
+        this.istoric.revalidate();
+        this.istoric.repaint();
+        
+        
+        for (Map.Entry<String, String> entry : this.map.entrySet())
+        {
+            this.istoric.jTextArea1.append(entry.getKey()+ "  Raspuns:" + entry.getValue() + "\n");
+        }
+        
+    }
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
 
         this.startButton.setVisible(false);
@@ -153,6 +182,12 @@ public class Fereastra extends javax.swing.JFrame {
         this.add(this.panou_intrebari);
         this.panou_intrebari.paint(null);
         this.panou_intrebari.revalidate();
+        this.panou_intrebari.istoric.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    aflaIstoric(evt);
+                }
+            });
+        this.setSize(1000,850);
         this.repaint();
         this.revalidate();
         try {
@@ -173,22 +208,28 @@ public class Fereastra extends javax.swing.JFrame {
         this.panou_intrebari = new panou_intrebare();
         this.initComponents();
         
+        this.map.clear();
+        this.numerotare = 'A';
         
         try {
             conexiune.expeditor.trimiteSirSicstus("comanda(reinitiaza)");
-            
-            
+  
         } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_reinitiazaButtonActionPerformed
 
     private void cumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cumButtonActionPerformed
-       
+       try {
+            conexiune.expeditor.trimiteSirSicstus("comanda(cum)");   
+        } catch (Exception ex) {
+            Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_cumButtonActionPerformed
 
     private void buttonIesireActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIesireActionPerformed
-        
+        dispose();
+        System.exit(0);
     }//GEN-LAST:event_buttonIesireActionPerformed
 
     private void afisare_fapteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afisare_fapteButtonActionPerformed
@@ -234,12 +275,17 @@ public class Fereastra extends javax.swing.JFrame {
         });
     }
     public void optiuneOK(java.awt.event.ActionEvent evt){
-        
-        String raspuns= ((JButton)(evt.getSource())).getText();
+        String raspuns = "";
+        for (Enumeration<AbstractButton> buttons = group.getElements(); buttons.hasMoreElements();) {
+            AbstractButton button = buttons.nextElement();
+
+            if (button.isSelected()) {
+                raspuns =  button.getText();
+            }
+        }
+        this.map.put(this.panou_intrebari.jLabel1.getText(), raspuns);
         try {
             conexiune.expeditor.trimiteSirSicstus(raspuns);
-            
-        
         } catch (Exception ex) {
             Logger.getLogger(Fereastra.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -256,11 +302,11 @@ public class Fereastra extends javax.swing.JFrame {
     
     public void seteazaIntrebare(String intrebare)
     {
-        this.panou_intrebari.jLabel1.setText(intrebare);
+        this.panou_intrebari.jLabel1.setText(numerotare + "." + intrebare);
         this.panou_intrebari.repaint();
+        numerotare++;
     }
-    
-    public void seteazaRaspunsuri(String optiuni)
+    public void seteazaRaspunsuri(String optiuni) throws IOException
     {
         this.panou_intrebari.jPanel1.removeAll();
         this.panou_intrebari.jPanel1.setLayout(new FlowLayout());
@@ -271,41 +317,78 @@ public class Fereastra extends javax.swing.JFrame {
         
         String[] optiuniVector = optiuni.split(" ");
         
+        group = new ButtonGroup();
         for(int i=0;i<optiuniVector.length;i++)
-        {
-            JButton b=new JButton(optiuniVector[i]);
-            b.addActionListener(new java.awt.event.ActionListener() {
+        { 
+            JRadioButton b=new JRadioButton(optiuniVector[i]);
+            if(i == 0 )
+                b.setSelected(true);
+            group.add(b);
+            this.panou_intrebari.jPanel1.add(b);
+        }
+        
+        Image img = ImageIO.read(getClass().getResource("/imagini/aiga-right-arrow.png"));  
+        Image newimg = img.getScaledInstance( 50, 50,  java.awt.Image.SCALE_SMOOTH ) ;
+        ImageIcon iconita = new ImageIcon(newimg);
+        JButton b = new JButton(iconita);
+        b.setPreferredSize(new Dimension(50, 50));
+        
+        b.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
                     optiuneOK(evt);
                 }
             });
-            this.panou_intrebari.jPanel1.add(b);
-        }
-        
+        this.panou_intrebari.jPanel1.add(b);
         this.panou_intrebari.jPanel1.repaint();
         this.panou_intrebari.jPanel1.revalidate();
+    }
+    
+    public void GetDemonstratie(java.awt.event.ActionEvent evt, String numeErou){
+        
     }
     
     public void setSolutie(String raspuns){
         if(!Fereastra.AFISAT_SOLUTII)
         {
             this.panou_intrebari.removeAll();
-            this.panou_intrebari.setLayout(new BoxLayout(this.panou_intrebari, BoxLayout.PAGE_AXIS));
+            this.panou_intrebari.setLayout(new BorderLayout());
             Fereastra.AFISAT_SOLUTII=true;
         }
         raspuns=raspuns.trim();
-        raspuns=raspuns.substring(2,raspuns.length()-1);
+        raspuns=raspuns.substring(2,raspuns.length());
         raspuns=raspuns.trim();
-        JLabel jsol=new JLabel(raspuns);
-        this.panou_intrebari.add(jsol);
         
-       
-
+        String[] erouFactor = raspuns.split(" ");
+        final String numeErou = erouFactor[2];
+        String factorCertitudine = erouFactor[6];
+        
+        JLabel jsol=new JLabel("-" + numeErou + ", factor de certitudine: "+ factorCertitudine);
+        JButton descriere = new JButton("Descriere" );
+        JButton demonstratie = new JButton("Demonstratie");
+        
+        demonstratie.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    GetDemonstratie(evt,numeErou);
+                }
+            });
+        
+        
+        JPanel jpanel = new JPanel();
+        this.panou_intrebari.add(jpanel);
+        jpanel.add(jsol,WEST);
+        jpanel.add(descriere,CENTER);
+        jpanel.add(demonstratie,EAST);
+        
         this.panou_intrebari.repaint();
         this.panou_intrebari.revalidate();
-    }
+
+     }
     
     
+    public String[] solutii;
+    public Map<String, String> map = new HashMap<String, String>(); 
+    ButtonGroup group;
+    char numerotare = 'A';
     File Fi;
     public static boolean AFISAT_SOLUTII=false;
     private JComboBox patternList;
